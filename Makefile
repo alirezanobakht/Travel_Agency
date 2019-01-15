@@ -27,7 +27,7 @@ SUFFIXES =
 $(VERBOSE).SILENT:
 
 
-# A target that is always out of myDate.
+# A target that is always out of date.
 cmake_force:
 
 .PHONY : cmake_force
@@ -121,6 +121,33 @@ Travel_Agency: cmake_check_build_system
 Travel_Agency/fast:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/build
 .PHONY : Travel_Agency/fast
+
+Admin/AdminPanels/Profile/profileEdit.obj: Admin/AdminPanels/Profile/profileEdit.cpp.obj
+
+.PHONY : Admin/AdminPanels/Profile/profileEdit.obj
+
+# target to build an object file
+Admin/AdminPanels/Profile/profileEdit.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/Profile/profileEdit.cpp.obj
+.PHONY : Admin/AdminPanels/Profile/profileEdit.cpp.obj
+
+Admin/AdminPanels/Profile/profileEdit.i: Admin/AdminPanels/Profile/profileEdit.cpp.i
+
+.PHONY : Admin/AdminPanels/Profile/profileEdit.i
+
+# target to preprocess a source file
+Admin/AdminPanels/Profile/profileEdit.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/Profile/profileEdit.cpp.i
+.PHONY : Admin/AdminPanels/Profile/profileEdit.cpp.i
+
+Admin/AdminPanels/Profile/profileEdit.s: Admin/AdminPanels/Profile/profileEdit.cpp.s
+
+.PHONY : Admin/AdminPanels/Profile/profileEdit.s
+
+# target to generate assembly for a file
+Admin/AdminPanels/Profile/profileEdit.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/Profile/profileEdit.cpp.s
+.PHONY : Admin/AdminPanels/Profile/profileEdit.cpp.s
 
 Admin/AdminPanels/drivers.obj: Admin/AdminPanels/drivers.cpp.obj
 
@@ -392,6 +419,33 @@ BankAccounts/account_func.cpp.s:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/BankAccounts/account_func.cpp.s
 .PHONY : BankAccounts/account_func.cpp.s
 
+Cities/city.obj: Cities/city.cpp.obj
+
+.PHONY : Cities/city.obj
+
+# target to build an object file
+Cities/city.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Cities/city.cpp.obj
+.PHONY : Cities/city.cpp.obj
+
+Cities/city.i: Cities/city.cpp.i
+
+.PHONY : Cities/city.i
+
+# target to preprocess a source file
+Cities/city.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Cities/city.cpp.i
+.PHONY : Cities/city.cpp.i
+
+Cities/city.s: Cities/city.cpp.s
+
+.PHONY : Cities/city.s
+
+# target to generate assembly for a file
+Cities/city.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Cities/city.cpp.s
+.PHONY : Cities/city.cpp.s
+
 Drivers/drivers.obj: Drivers/drivers.cpp.obj
 
 .PHONY : Drivers/drivers.obj
@@ -509,6 +563,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Travel_Agency
 	@echo ... edit_cache
+	@echo ... Admin/AdminPanels/Profile/profileEdit.obj
+	@echo ... Admin/AdminPanels/Profile/profileEdit.i
+	@echo ... Admin/AdminPanels/Profile/profileEdit.s
 	@echo ... Admin/AdminPanels/drivers.obj
 	@echo ... Admin/AdminPanels/drivers.i
 	@echo ... Admin/AdminPanels/drivers.s
@@ -539,6 +596,9 @@ help:
 	@echo ... BankAccounts/account_func.obj
 	@echo ... BankAccounts/account_func.i
 	@echo ... BankAccounts/account_func.s
+	@echo ... Cities/city.obj
+	@echo ... Cities/city.i
+	@echo ... Cities/city.s
 	@echo ... Drivers/drivers.obj
 	@echo ... Drivers/drivers.i
 	@echo ... Drivers/drivers.s

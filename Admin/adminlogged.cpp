@@ -25,10 +25,11 @@ using namespace std;
 
 void adminLogged(){
     clrscr();
+    fontColor();
     {
         //~~~~~~~~~~~~~~~Admin UI~~~~~~~~~~~~~~~~~~~~//
         cout << "*_*      Admin Page      :)" << endl;
-        cout << "There is your access panel below. Enter the number of each one you want access:" << endl;
+        cout << "There is your accessories panel below. Enter the number of each one you want access:" << endl;
         cout<<endl;
         cout << "-1.  Exit" << endl;
         cout << "0.   Back to main menu" << endl;

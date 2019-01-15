@@ -3,11 +3,13 @@
 #include <conio.h>
 #include <vector>
 #include <ctime>
+#include <windows.h>
 #include "BankAccounts/account_func.h"
 #include "someThingNecessary.h"
+#include <stdlib.h>
+#include "myAll.h"
 using namespace std;
 
-#include <stdlib.h>
 
 void toBinaryAcc(){
     FILE * f = fopen("BankAccounts/accounts.txt","r");
@@ -38,8 +40,10 @@ void toBinaryAcc(){
 int main() {
     toBinaryAcc();
     clrscr();
+    setTitle("Travel Agency");
     cout<<"##Welcome to Travel Agency##"<<endl;
     cout<<"Which one are you?! choose the number and press enter:"<<endl;
+    fontColor(4);
     cout<<"1    Admin"<<endl;
     cout<<"2    User"<<endl;
     cout<<"3    Driver"<<endl;

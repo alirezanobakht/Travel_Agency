@@ -65,6 +65,11 @@ void SignUp(){
 
 }
 
+int editAdminProfile(admin a){
+    FILE *f=fopen("Admin/admin.encrypted","wb");
+    fwrite(&a, sizeof(admin),1,f);
+    fclose(f);
+}
 
 admin adminInfo(){
     FILE * f=fopen("Admin/admin.encrypted","rb");

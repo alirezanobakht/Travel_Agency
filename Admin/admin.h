@@ -16,6 +16,9 @@ typedef struct admin{
 //Return admin struct:
 admin adminInfo();
 
+//Admin Editing profile:
+int editAdminProfile(admin a);
+
 //Main function::::
 int Admin();
 

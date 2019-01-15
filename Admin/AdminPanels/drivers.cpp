@@ -16,7 +16,16 @@ using namespace std;
 
 void drivers(){
     clrscr();
+    fontColor();
     cout<<"************* Drivers Panel ********************"<<endl;
+    cout<<endl;
+    cout<<"0.    Back to Admin page"<<endl;
+    cout<<endl;
+    cout<<"----------------------------------------------------";
+    cout<<endl;
+    cout<<"1.   Show all Drivers."<<endl;
+    cout<<"2.   Add Driver."<<endl;
+    cout<<"3.   Delete Driver."<<endl;
 
     int x;
     cin>>x;

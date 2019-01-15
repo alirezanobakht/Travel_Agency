@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/Profile/profileEdit.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/Profile/profileEdit.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/drivers.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
@@ -140,6 +146,12 @@
 		<Unit filename="E:/Project/Travel_Agency/BankAccounts/account_func.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Cities/city.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Cities/city.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Drivers/drivers.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
@@ -156,6 +168,9 @@
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/main.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/myAll.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/someThingNecessary.cpp">

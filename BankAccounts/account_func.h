@@ -52,7 +52,7 @@ vector<trans> getAllTrans(int accID);
 void updateTrans(vector<trans> v);
 
 /*
- * return:
+ * returns:
  * 0 : if not succeed.
  * -1 : when account exist but password is wrong
  * -2 : when no such account found

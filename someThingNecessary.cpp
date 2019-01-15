@@ -7,6 +7,8 @@
 #include <conio.h>
 #include <vector>
 #include <ctime>
+#include <stdlib.h>
+#include <windows.h>
 using namespace std;
 
 void clrscr(){
@@ -24,4 +26,14 @@ myDate nowTime(){
     md.min=ltm->tm_min;
     md.sec=ltm->tm_sec;
     return md;
+}
+
+
+
+void fontColor(int x){
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),x);
+}
+
+bool setTitle(char a[20]){
+    SetConsoleTitle(a);
 }
