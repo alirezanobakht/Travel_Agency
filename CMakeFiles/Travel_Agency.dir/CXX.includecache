@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-E:/Project/Travel_Agency/Admin/AdminPanels/offers.cpp
-offers.h
-E:/Project/Travel_Agency/Admin/AdminPanels/offers.h
-iostream
--
-stdlib.h
--
-stdio.h
--
-string
--
-windows.h
--
-../../myAll.h
-E:/Project/Travel_Agency/myAll.h
-../../main.h
-E:/Project/Travel_Agency/main.h
-../../someThingNecessary.h
-E:/Project/Travel_Agency/someThingNecessary.h
-
-E:/Project/Travel_Agency/Admin/AdminPanels/offers.h
-../../myAll.h
-E:/Project/Travel_Agency/myAll.h
-
 E:/Project/Travel_Agency/Admin/AdminPanels/setting.h
 
 E:/Project/Travel_Agency/Admin/admin.h
@@ -46,7 +22,19 @@ string
 vector
 -
 
+E:/Project/Travel_Agency/Cities/city.cpp
+city.h
 E:/Project/Travel_Agency/Cities/city.h
+../myAll.h
+E:/Project/Travel_Agency/myAll.h
+math.h
+-
+
+E:/Project/Travel_Agency/Cities/city.h
+
+E:/Project/Travel_Agency/UI/UI.h
+../myAll.h
+E:/Project/Travel_Agency/myAll.h
 
 E:/Project/Travel_Agency/main.h
 
@@ -60,6 +48,10 @@ stdio.h
 windows.h
 -
 stdlib.h
+-
+conio.h
+-
+math.h
 -
 main.h
 E:/Project/Travel_Agency/main.h
@@ -75,6 +67,8 @@ Admin/AdminPanels/setting.h
 E:/Project/Travel_Agency/Admin/AdminPanels/setting.h
 Cities/city.h
 E:/Project/Travel_Agency/Cities/city.h
+UI/UI.h
+E:/Project/Travel_Agency/UI/UI.h
 
 E:/Project/Travel_Agency/someThingNecessary.h
 

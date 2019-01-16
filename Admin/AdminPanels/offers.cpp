@@ -32,7 +32,89 @@ int offPercent(string id){
 
 //------------------NOT FOR YOU--------------------
 void offers(){
+    fontColor(232);
+    cout<<" ";
     clrscr();
+    disableCursor();
+    int x=getWindowSize().X;
+    int y=getWindowSize().Y;
+
+    fontColor(237);
+    gotoxy(5,y-2);
+    cout<<"[esc]: Back";
+    gotoxy(x-23,y-2);
+    cout<<"[alt] + [f4]: Exit";
+
+    int color=0;
+
+    while(1){
+        color=abs(color%3);
+
+        if(color==0){
+            fontColor(224);
+        }
+        else{
+            fontColor(230);
+        }
+        gotoxy(x/2-8,y/2-1);
+        cout << "Show All Offers" << endl;
+
+        if(color==1){
+            fontColor(224);
+        }
+        else{
+            fontColor(230);
+        }
+        gotoxy(x/2-8,y/2);
+        cout << "Create new offer" << endl;
+        if(color==2){
+            fontColor(224);
+        }
+        else{
+            fontColor(230);
+        }
+        gotoxy(x/2-6,y/2+1);
+        cout << "Delete offer" << endl;
+
+
+
+        char c=getch();
+
+        if(c==27){
+            adminLogged();
+            break;
+        }
+        else if(c==-32){
+            c=getch();
+            if(c==80){
+                color++;
+            }
+            else if(c==72){
+                color--;
+            }
+        }
+        else if(c==0){
+            c=getch();
+            if(c==107)
+                exit(0);
+        }
+        else if(c==13){
+            if(color==0){
+                showAllOffers();
+                break;
+            }
+            else if(color==1){
+                createOffer();
+                break;
+            }
+            else if(color==2){
+                deleteOffer();
+                break;
+            }
+        }
+    }
+
+    /*
     setTitle("Offer Panel");
     cout<<"************* Offers Panel ********************"<<endl;
     cout<<endl;
@@ -57,12 +139,12 @@ void offers(){
     }
     else if(x==3){
         deleteOffer();
-    }
+    }*/
 }
 
 void showAllOffers(){
     clrscr();
-    setTitle("All Offers");
+    cout<<endl;
     cout<<"List of Offers:"<<endl;
     cout<<"OfferID   |   Percentage"<<endl;
     cout<<endl;

@@ -473,6 +473,33 @@ Drivers/drivers.cpp.s:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Drivers/drivers.cpp.s
 .PHONY : Drivers/drivers.cpp.s
 
+UI/UI.obj: UI/UI.cpp.obj
+
+.PHONY : UI/UI.obj
+
+# target to build an object file
+UI/UI.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/UI/UI.cpp.obj
+.PHONY : UI/UI.cpp.obj
+
+UI/UI.i: UI/UI.cpp.i
+
+.PHONY : UI/UI.i
+
+# target to preprocess a source file
+UI/UI.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/UI/UI.cpp.i
+.PHONY : UI/UI.cpp.i
+
+UI/UI.s: UI/UI.cpp.s
+
+.PHONY : UI/UI.s
+
+# target to generate assembly for a file
+UI/UI.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/UI/UI.cpp.s
+.PHONY : UI/UI.cpp.s
+
 Users/users.obj: Users/users.cpp.obj
 
 .PHONY : Users/users.obj
@@ -602,6 +629,9 @@ help:
 	@echo ... Drivers/drivers.obj
 	@echo ... Drivers/drivers.i
 	@echo ... Drivers/drivers.s
+	@echo ... UI/UI.obj
+	@echo ... UI/UI.i
+	@echo ... UI/UI.s
 	@echo ... Users/users.obj
 	@echo ... Users/users.i
 	@echo ... Users/users.s

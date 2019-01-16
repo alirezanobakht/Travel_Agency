@@ -16,7 +16,7 @@
 #include "../../adminlogged.h"
 #include "../../admin.h"
 #include "../setting.h"
-
+#include "../../../myAll.h"
 void editUsername(admin a){
     clrscr();
     cout<<"Enter new username:"<<endl;
@@ -97,35 +97,100 @@ void editAccID(admin a){
     profileEdit();
 }
 
-void profileEdit(){
+void  profileEdit(){
+    fontColor(95);
+    cout<<" ";
     clrscr();
-    setTitle("Editing Profile");
-    cout<<"0.   Back to Setting page"<<endl;
-    cout<<endl;
+    disableCursor();
+    int x=getWindowSize().X;
+    int y=getWindowSize().Y;
+
+    fontColor(83);
+    gotoxy(5,y-2);
+    cout<<"[esc]: Back";
+    gotoxy(x-23,y-2);
+    cout<<"[alt] + [f4]: Exit";
+
     admin a=adminInfo();
-    cout<<"Your Username is:    "<<a.userName<<endl;
-    cout<<"For edit enter 1"<<endl;
-    cout<<"Your password is:    ****"<<endl;
-    cout<<"For edit enter 2"<<endl;
-    cout<<"Your account ID is:      "<<a.accID<<endl;
-    cout<<"For edit enter 3"<<endl;
-    cout<<endl;
-    cout<<"----------------------------------------------------"<<endl;
-    cout<<endl;
-    int x;
-    cin>>x;
-    if(x==0){
-        setting();
-    }
-    else if(x==1){
-        editUsername(a);
-    }
-    else if(x==2){
-        editPassword(a);
-    }
-    else if(x==3){
-        editAccID(a);
-    }
+    int color=0;
 
+    gotoxy(0,2);
+    fontColor(95);
+    cout<<"   Username:    ";
+    fontColor(94);
+    cout<<a.userName<<endl;
+    fontColor(95);
+    cout<<"   Password:    ";
+    fontColor(94);
+    cout<<"********"<<endl;
+    fontColor(95);
+    cout<<"   Account ID:  ";
+    fontColor(94);
+    cout<<a.accID;
+    gotoxy(36,2);
+    fontColor(90);
+    cout<<"Edit";
 
+    while (1) {
+        color = abs(color % 3);
+
+        if (color == 0) {
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            gotoxy(35, 2);
+            cout << "Edit";
+        } else if (color == 1) {
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            gotoxy(35, 3);
+            cout << "Edit";
+        } else if (color == 2) {
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            cout << "\b \b";
+            gotoxy(35, 4);
+            cout << "Edit";
+        }
+
+        char c=getch();
+
+        if(c==27){
+            setting();
+            break;
+        }
+        else if(c==-32){
+            c=getch();
+            if(c==80){
+                color++;
+            }
+            else if(c==72){
+                color--;
+            }
+        }
+        else if(c==0){
+            c=getch();
+            if(c==107)
+                exit(0);
+        }
+        else if(c==13){
+            if(color==0){
+                editUsername(a);
+                break;
+            }
+            else if(color==1){
+                editPassword(a);
+                break;
+            }
+            else if(color==2){
+                editAccID(a);
+                break;
+            }
+        }
+
+    }
 }

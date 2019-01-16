@@ -37,18 +37,76 @@ void toBinaryAcc(){
     }
 }
 
-int main() {
+int main(){
     toBinaryAcc();
+    fullScreen();
+    fontColor(120);
+    cout<<" ";
     clrscr();
+    disableCursor();
     setTitle("Travel Agency");
-    cout<<"##Welcome to Travel Agency##"<<endl;
-    cout<<"Which one are you?! choose the number and press enter:"<<endl;
-    fontColor(4);
-    cout<<"1    Admin"<<endl;
-    cout<<"2    User"<<endl;
-    cout<<"3    Driver"<<endl;
-    int x;
-    cin>>x;
+    int x,y;
+    y=getWindowSize().Y/2;
+    x=getWindowSize().X/2;
+    int color=0;
+    char dokme;
+    gotoxy(x-4,y-2);
+    fontColor(112);
+    cout<<"Enter As:";
+    while(1){
+        color=abs(color)%3;
+        gotoxy(x-3,y-1);
+        if(color==0){
+            fontColor(116);
+        }
+        else{
+            fontColor(120);
+        }
+        cout<<"Admin";
+        gotoxy(x-2,y);
+        if(color==1){
+            fontColor(116);
+        }
+        else{
+            fontColor(120);
+        }
+        cout<<"User";
+        gotoxy(x-3,y+1);
+        if(color==2){
+            fontColor(116);
+        }
+        else{
+            fontColor(120);
+        }
+        cout<<"Driver";
+
+
+        dokme=getch();
+        if(dokme==13){
+            if(color==0){
+                Admin();
+                break;
+            }
+            else if(color==1){
+
+                break;
+            }
+            else{
+
+                break;
+            }
+        }
+        else if(dokme==-32){
+            dokme=getch();
+            if(dokme==80){
+                color++;
+            }
+            else if(dokme==72){
+                color--;
+            }
+        }
+
+    }
     if(x==1){
         Admin();
     }
@@ -57,7 +115,6 @@ int main() {
     }
     else{
     }
-
 
     return 0;
 }

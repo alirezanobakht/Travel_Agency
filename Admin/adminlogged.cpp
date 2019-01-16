@@ -24,87 +24,137 @@
 using namespace std;
 
 void adminLogged(){
+    fontColor(63);
+    cout<<" ";
     clrscr();
-    fontColor();
-    {
-        //~~~~~~~~~~~~~~~Admin UI~~~~~~~~~~~~~~~~~~~~//
-        cout << "*_*      Admin Page      :)" << endl;
-        cout << "There is your accessories panel below. Enter the number of each one you want access:" << endl;
-        cout<<endl;
-        cout << "-1.  Exit" << endl;
-        cout << "0.   Back to main menu" << endl;
-        cout << endl;
-        cout << "1.   Setting" << endl;
-        cout << "2.   Users" << endl;
-        cout << "3.   Drivers" << endl;
-        cout << "4.   Tickets" << endl;
-        cout << "5.   Offers" << endl;
-        cout << "6.   Account transaction" << endl;
-        cout << "7.   Trips" << endl;
-        cout<<endl;
-        cout << "--------------------------------------------" << endl;
-        cout<<endl;
-    }
+    disableCursor();
+    int x=getWindowSize().X;
+    int y=getWindowSize().Y;
 
-    //----------------user Input-------------------//
-    while(true){
-        int entered;
-        cin>>entered;
-        if(entered==-1){
-            exit(0);
+    fontColor(61);
+    gotoxy(5,y-2);
+    cout<<"[esc]: Back";
+    gotoxy(x-23,y-2);
+    cout<<"[alt] + [f4]: Exit";
+
+    int color=0;
+
+    while(true) {
+        color=abs(color%7);
+
+        if(color==0){
+            fontColor(48);
         }
-        else if(entered==0){
-            cout<<"Returning to main menu ...";
-            Sleep(1000);
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-4,y/2-3);
+        cout << "Setting" << endl;
+
+        if(color==1){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-3,y/2-2);
+        cout << "Users" << endl;
+
+        if(color==2){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-4,y/2-1);
+        cout << "Drivers" << endl;
+
+        if(color==3){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-4,y/2);
+        cout << "Tickets" << endl;
+
+        if(color==4){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-3,y/2+1);
+        cout << "Offers" << endl;
+
+        if(color==5){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-10,y/2+2);
+        cout << "Account transaction" << endl;
+
+        if(color==6){
+            fontColor(48);
+        }
+        else{
+            fontColor(63);
+        }
+        gotoxy(x/2-3,y/2+3);
+        cout << "Trips" << endl;
+
+        char c=getch();
+
+        if(c==27){
             main();
             break;
         }
-        else if(entered==1){
-            cout<<"Going to Setting ...";
-            Sleep(1000);
-            setting();
-            break;
+        else if(c==-32){
+            c=getch();
+            if(c==80){
+                color++;
+            }
+            else if(c==72){
+                color--;
+            }
         }
-        else if(entered==2){
-            cout<<"Going to User panel ...";
-            Sleep(1000);
-            users();
-            break;
+        else if(c==13){
+            if(color==0){
+                setting();
+                break;
+            }
+            else if(color==1){
+                users();
+                break;
+            }
+            else if(color==2){
+                drivers();
+                break;
+            }
+            else if(color==3){
+                tickets();
+                break;
+            }
+            else if(color==4){
+                offers();
+                break;
+            }
+            else if(color==5){
+                transaction();
+                break;
+            }
+            else if(color==6){
+                trips();
+                break;
+            }
         }
-        else if(entered==3){
-            cout<<"Going to Drivers panel ...";
-            Sleep(1000);
-            drivers();
-            break;
+        else if(c==0){
+            c=getch();
+            if(c==107)
+                exit(0);
         }
-        else if(entered==4){
-            cout<<"Going to the Ticket panel ...";
-            Sleep(1000);
-            tickets();
-            break;
-        }
-        else if(entered==5){
-            cout<<"Going to the Offer panel ...";
-            Sleep(1000);
-            offers();
-            break;
-        }
-        else if(entered==6){
-            cout<<"Going to the Account transaction ...";
-            Sleep(1000);
-            transaction();
-            break;
-        }
-        else if(entered==7){
-            cout<<"Going to the Trips panel ...";
-            Sleep(1000);
-            trips();
-            break;
-        }
-        else{
-            cout<<"\aInput not valid. Try again:"<<endl;
-        }
-
 
     }
 

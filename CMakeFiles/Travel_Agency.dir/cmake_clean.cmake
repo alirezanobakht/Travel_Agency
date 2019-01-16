@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Travel_Agency.dir/someThingNecessary.cpp.obj"
   "CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/Profile/profileEdit.cpp.obj"
   "CMakeFiles/Travel_Agency.dir/Cities/city.cpp.obj"
+  "CMakeFiles/Travel_Agency.dir/UI/UI.cpp.obj"
   "Travel_Agency.pdb"
   "Travel_Agency.exe"
   "Travel_Agency.exe.manifest"

@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <conio.h>
+#include <math.h>
 
 
 #include "main.h"
@@ -19,6 +21,7 @@
 #include "Admin/adminlogged.h"
 #include "Admin/AdminPanels/setting.h"
 #include "Cities/city.h"
+#include "UI/UI.h"
 
 
 

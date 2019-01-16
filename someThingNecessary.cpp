@@ -11,9 +11,7 @@
 #include <windows.h>
 using namespace std;
 
-void clrscr(){
-    system("@cls||clear");
-}
+
 
 myDate nowTime(){
     time_t now = time(0);
@@ -30,10 +28,3 @@ myDate nowTime(){
 
 
 
-void fontColor(int x){
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),x);
-}
-
-bool setTitle(char a[20]){
-    SetConsoleTitle(a);
-}

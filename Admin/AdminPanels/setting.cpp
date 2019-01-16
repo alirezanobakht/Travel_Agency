@@ -16,31 +16,76 @@
 #include "../adminlogged.h"
 #include "Profile/profileEdit.h"
 #include "../../Cities/city.h"
+#include "../../myAll.h"
 
 using namespace std;
 
 void setting(){
+    fontColor(95);
+    cout<<" ";
     clrscr();
-    setTitle("Setting Panel");
-    system("Color 5F");
-    cout<<"************* Setting Panel ********************"<<endl;
-    cout<<endl;
-    cout<<"0.   Back to Admin page"<<endl;
-    cout<<endl;
-    cout<<"1.   Edit Profile"<<endl;
-    cout<<"2.   Edit Pricing Policy"<<endl;
-    cout<<endl;
-    cout<<"----------------------------------------------------"<<endl;
-    cout<<endl;
-    int x;
-    cin>>x;
-    if(x==0){
-        adminLogged();
-    }
-    else if(x==1){
-        profileEdit();
-    }
-    else if(x==2){
-        editPrice();
+    disableCursor();
+    int x=getWindowSize().X;
+    int y=getWindowSize().Y;
+
+    fontColor(83);
+    gotoxy(5,y-2);
+    cout<<"[esc]: Back";
+    gotoxy(x-23,y-2);
+    cout<<"[alt] + [f4]: Exit";
+
+    int color=0;
+
+    while(1){
+        color=abs(color%2);
+
+        if(color==0){
+            fontColor(80);
+        }
+        else{
+            fontColor(95);
+        }
+        gotoxy(x/2-6,y/2-1);
+        cout << "Edit Profile" << endl;
+
+        if(color==1){
+            fontColor(80);
+        }
+        else{
+            fontColor(95);
+        }
+        gotoxy(x/2-10,y/2);
+        cout << "Edit Pricing Policy" << endl;
+
+        char c=getch();
+
+        if(c==27){
+            adminLogged();
+            break;
+        }
+        else if(c==-32){
+            c=getch();
+            if(c==80){
+                color++;
+            }
+            else if(c==72){
+                color--;
+            }
+        }
+        else if(c==13) {
+            if (color == 0) {
+                profileEdit();
+                break;
+            } else if (color == 1) {
+                editPrice();
+                break;
+            }
+        }
+        else if(c==0){
+            c=getch();
+            if(c==107)
+                exit(0);
+        }
+
     }
 }

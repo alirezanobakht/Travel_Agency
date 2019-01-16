@@ -15,13 +15,15 @@ typedef struct shahr{
 
 void editPrice(){
     clrscr();
+    enableCursor();
     FILE * f=fopen("Cities/pricePolicy.dat","rb");
     if(f==NULL){
         fclose(f);
-        cout<<"No price multiple is declared yet."<<endl;
-        cout<<"Price = Multiple * Distance"<<endl;
+        cout<<endl;
+        cout<<"  No price multiple is declared yet."<<endl;
+        cout<<"  Price = Multiple * Distance"<<endl;
         float mul;
-        cout<<"Multiple:    ";
+        cout<<"  Multiple:    ";
         cin>>mul;
         FILE * f1=fopen("Cities/pricePolicy.dat","wb");
         fwrite(&mul, sizeof(float),1,f1);
@@ -31,16 +33,17 @@ void editPrice(){
         float curmul;
         fread(&curmul, sizeof(float),1,f);
         fclose(f);
-        cout<<"Multiple = "<<curmul<<endl;
-        cout<<"Price = Multiple * Distance"<<endl;
+        cout<<endl;
+        cout<<"  Multiple = "<<curmul<<endl;
+        cout<<"  Price = Multiple * Distance"<<endl;
         float mul;
-        cout<<"New Multiple value:   ";
+        cout<<"  New Multiple value:   ";
         cin>>mul;
         FILE * f1=fopen("Cities/pricePolicy.dat","wb");
         fwrite(&mul, sizeof(float),1,f1);
         fclose(f1);
     }
-    cout<<"Pricing Policy changed successfully!";
+    cout<<"  Pricing Policy changed successfully!";
     Sleep(1000);
     setting();
 }

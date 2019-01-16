@@ -158,6 +158,12 @@
 		<Unit filename="E:/Project/Travel_Agency/Drivers/drivers.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/UI/UI.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/UI/UI.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Users/users.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
