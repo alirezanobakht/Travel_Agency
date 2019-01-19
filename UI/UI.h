@@ -5,7 +5,13 @@
 #ifndef TRAVEL_AGENCY_UI_H
 #define TRAVEL_AGENCY_UI_H
 
-#include "../myAll.h"
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <windows.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
 
 void gotoxy(int x,int y);
 

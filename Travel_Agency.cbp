@@ -122,10 +122,10 @@
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/trips.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/users.cpp">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/userPanel.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/users.h">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/userPanel.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Admin/admin.cpp">
@@ -152,16 +152,49 @@
 		<Unit filename="E:/Project/Travel_Agency/Cities/city.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Drivers/drivers.cpp">
+		<Unit filename="E:/Project/Travel_Agency/Drivers/AhmadDriver.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Drivers/drivers.h">
+		<Unit filename="E:/Project/Travel_Agency/Drivers/AhmadDriver.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Drivers/UI/ahmadUI.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Drivers/UI/ahmadUI.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Trip/trip.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Trip/trip.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/UI/UI.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/UI/UI.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/define.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/mammadUI.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/mammadUI.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/tickets.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/tickets.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/userMain.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Users/userMain.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Users/users.cpp">

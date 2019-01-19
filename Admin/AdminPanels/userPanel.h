@@ -5,6 +5,6 @@
 #ifndef TRAVEL_AGENCY_USERS_H
 #define TRAVEL_AGENCY_USERS_H
 
-void users();
+void usersPanel();
 
 #endif //TRAVEL_AGENCY_USERS_H

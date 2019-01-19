@@ -17,6 +17,7 @@
 using namespace std;
 
 void trips(){
+    fontColor()
     clrscr();
     cout<<"************* Trips Panel ********************"<<endl;
 

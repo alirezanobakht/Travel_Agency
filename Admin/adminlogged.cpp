@@ -15,7 +15,7 @@
 #include "../someThingNecessary.h"
 //Panels:
 #include "AdminPanels/setting.h"
-#include "AdminPanels/users.h"
+#include "AdminPanels/userPanel.h"
 #include "AdminPanels/drivers.h"
 #include "AdminPanels/tickets.h"
 #include "AdminPanels/offers.h"
@@ -126,7 +126,7 @@ void adminLogged(){
                 break;
             }
             else if(color==1){
-                users();
+                usersPanel();
                 break;
             }
             else if(color==2){

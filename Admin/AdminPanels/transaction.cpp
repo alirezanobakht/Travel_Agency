@@ -61,7 +61,7 @@ void transaction(){
     cout<<endl;
     cout<<endl;
     cout<<"  The Transaction are shown as below format:"<<endl;
-    cout<<"  Tracking Number | dest accID | Cost | Year | Month | Day | Hour | Minute | Second | Explanation"<<endl;
+    cout<<"  Tracking Number | dest accID | Cost | MM/DD/YY | HH:MM':SS\" | Explanation"<<endl;
     Sleep(2000);
     cout<<endl;
     vector<trans> vtr = getAllTrans(ad.accID);
@@ -76,12 +76,12 @@ void transaction(){
             cout <<"  "<< vtr[i].trackingNumber << " | ";
             cout << vtr[i].dest << " | ";
             cout << vtr[i].cost << " | ";
+            cout << vtr[i].d.month << "/";
+            cout << vtr[i].d.day << "/";
             cout << vtr[i].d.year << " | ";
-            cout << vtr[i].d.month << " | ";
-            cout << vtr[i].d.day << " | ";
-            cout << vtr[i].d.hour << " | ";
-            cout << vtr[i].d.min << " | ";
-            cout << vtr[i].d.sec << " | ";
+            cout << vtr[i].d.hour << ":";
+            cout << vtr[i].d.min << "':";
+            cout << vtr[i].d.sec << "\" | ";
             cout << vtr[i].exp;
             cout << endl;
         }
@@ -102,7 +102,7 @@ void transaction(){
     while(1){
         char c=getch();
         if(c==27){
-            setting();
+            adminLogged();
             break;
         }
         else if(c==0){
