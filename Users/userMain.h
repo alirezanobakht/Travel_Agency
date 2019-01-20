@@ -19,7 +19,7 @@ Ticket create_guest_register_panel(Trip);
 void create_show_ticket_panel(User);
 void create_show_ticket_panel(Ticket);
 int create_pay_panel(User);
-Ticket create_pay_panel(char[12],Trip);
+Ticket create_pay_panel(char[12],char[21],char[21],Trip);
 void create_show_transaction_panel(User);
 void create_buy_ticket_panel(User);
 void create_buy_ticket_panel();

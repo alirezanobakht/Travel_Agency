@@ -7,7 +7,7 @@
 
 #include "define.h"
 
-
+vector<Ticket> getTicketByTrip(int tripId);
 
 double penaltyPrice(Ticket _ticket);
 int getTicketID();

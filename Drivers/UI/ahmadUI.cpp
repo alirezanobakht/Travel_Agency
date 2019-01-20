@@ -1,7 +1,6 @@
 //
-// Created by Jarvis on 1/18/2019.
+// Created by GOD on 1/18/2019.
 //
-
 #include "ahmadUI.h"
 #include <iostream>
 #include <stdio.h>
@@ -16,6 +15,9 @@
 #include "../../Trip/trip.h"
 #include "../TripsFunctions.h"
 #include "../../BankAccounts/account_func.h"
+#include "../../Users/define.h"
+#include "../../Users/tickets.h"
+
 //-----------------------------------------------Necessary Functions----------------------------------------------
 /*
 void fullScreen(){
@@ -237,6 +239,8 @@ void driversLoginPage(int username,Driver drvr){
     cout<<"Edit profile";
     gotoxy(x-12,y+1);
     cout<<"List of All Transactions";
+    gotoxy(x-22,y+2);
+    cout << "List of All Passengers";
     int color = 0;
 
     // UpArrow  = 72;
@@ -273,16 +277,23 @@ void driversLoginPage(int username,Driver drvr){
         }
         gotoxy(x-12,y+1);
         cout<<"List of All Transactions";
+        if (color == 4){
+            fontColor(124);
+        } else{
+            fontColor(112);
+        }
+        gotoxy(x-11,y+2);
+        cout << "List of All Passengers";
         char dokme = _getch();
         if (dokme == -32) {
             dokme = _getch();
             if (dokme == 72) {
                 color--;
                 if (color == -1)
-                    color = 3;
+                    color = 4;
             } else if (dokme == 80) {
                 color++;
-                if (color == 4)
+                if (color == 5)
                     color =0;
             }
 
@@ -298,6 +309,10 @@ void driversLoginPage(int username,Driver drvr){
             }
             if (color == 3){
                 listOfAllTransactions(username);
+            }
+            if (color == 4){
+                getAllTicketsForATrip();
+                driversLoginPage(username,drvr);
             }
         }
         else if (dokme == 0){
@@ -322,6 +337,10 @@ void listOfAllTripsDriver(int username){
         fontColor(157);
         cout<<"Trip ID  |   Starting City   |   Destination   |   Number of Seats   |   Sold Ticket(s)   |   Date   |   Time   |   Estimated Time   |   Cost\n";
         vector<Trip> allTrips = getTripDriver(username);
+        COORD c = getWindowSize();
+        gotoxy(4,c.Y-4);
+        cout<<"[CTRL] + F4 : Back";
+        gotoxy(2,3);
         fontColor(144);
         if (allTrips.size() == 0){
             cout<<"There are not any trips available for you to show!";
@@ -344,6 +363,7 @@ void listOfAllTripsDriver(int username){
 
     driversLoginPage(username,findDriver(username));
 }
+
 
 void listOfAllTransactions(int username){
     Driver temp = findDriver(username);
@@ -433,6 +453,34 @@ void listOfAllTransactions(int username){
     driversLoginPage(username,findDriver(username));
 }
 
+void getAllTicketsForATrip(){
+    clrscr();
+    COORD c = getWindowSize();
+    int x = c.X/2;
+    int y = c.Y/2;
+    gotoxy(x-3,y);
+    cout << "Enter Trip ID : ";
+    int tripID;
+    cin >> tripID;
+    vector<Ticket> allTickets = getTicketByTrip(tripID);
+    clrscr();
+    gotoxy(x-4,y);
+    cout<<"LOADING!";
+    Sleep(1500);
+    clrscr();
+    for (int i = 0; i < allTickets.size(); i++) {
+        gotoxy(4, i + 1);
+        cout << allTickets[i].phone_number << endl;
+    }
+    while (1) {
+        char temp = getch();
+        if (temp == 0){
+            temp = getch();
+            if (temp == 97)
+                break;
+        }
+    }
+}
 
 void editProfilePage(int username){
     clrscr();
@@ -861,4 +909,3 @@ void EditBankAccount(int username){
 }
 
 //TODO Gereftan List mosafer
-//TODO virayesh safar

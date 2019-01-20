@@ -47,7 +47,7 @@ int  VerifyLoginInfo(int username, char password[50]);
 */
 vector<Driver> GetDrivers();
 
-
+void getAllTicketsForATrip();;
 /*
  * Returns the place of a special driver in vector.
  * Returns -1 if the username was not found in the vector;

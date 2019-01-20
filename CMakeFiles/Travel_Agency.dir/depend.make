@@ -182,6 +182,8 @@ CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/UI/ahmadUI.cpp
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/UI/ahmadUI.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Trip/trip.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: UI/UI.h
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Users/define.h
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Users/tickets.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: main.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: someThingNecessary.h
 

@@ -28,6 +28,8 @@ typedef struct ticket{
     Trip ticket_trip={};
     int seat_number=-1;
     char phone_number[12]={};
+    char fname[21];
+    char lname[21];
 }Ticket;
 
 

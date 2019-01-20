@@ -35,8 +35,6 @@ void defineNewTrip(int username,Driver drvr){
     cout << "Enter Dept. Hour : ";
     gotoxy(4,10);
     cout << "Enter Dept. Min : ";
-    gotoxy(4,11);
-    cout << "Enter Price : ";
     gotoxy(26,4);
     cin >> newTrip.src;
     gotoxy(28, 5);
@@ -51,8 +49,7 @@ void defineNewTrip(int username,Driver drvr){
     cin >> newTrip.date.hour;
     gotoxy(22,10);
     cin >> newTrip.date.min;
-    gotoxy(18,11);
-    cin >> newTrip.cost;
+    newTrip.cost = getPrice(newTrip.src,newTrip.dst);
     newTrip.drvr = drvr;
     newTrip.ID = getTripID();
     newTrip.estimate = getDistance(newTrip.src,newTrip.dst) / newTrip.drvr.v.velocity;

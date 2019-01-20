@@ -138,7 +138,60 @@ void editDriverPanel(){
     cin>>user;
     Driver d=findDriver(user);
     clrscr();
-    //TODO inja ro kamel kon;
+    vector<Driver> dvrs=GetDrivers();
+    cout<<"  Enter Driver Id:   ";
+    int id;
+    cin>>id;
+    Driver dvr;
+    for(int i=0;i<dvrs.size();i++){
+        if(dvrs[i].username==id){
+            dvr=dvrs[i];
+        }
+    }
+    clrscr();
+    cout<<endl;
+    cout<<"1.  Edit first name"<<endl;
+    cout<<"2.  Edit last name"<<endl;
+    cout<<"3.  Edit phone number"<<endl;
+    cout<<"4.  Edit vehicle velocity"<<endl;
+    cout<<"5.  Edit vehicle capacity"<<endl;
+    cout<<endl;
+    cout<<"------------------------------------------"<<endl;
+    cout<<endl;
+    int x;
+    cin>>x;
+
+    if(x==1){
+        cout<<"Enter new first name:  "<<endl;
+        char c[10];
+        cin>>c;
+        memcpy(dvr.fname,c,10);
+    }
+    else if(x==2){
+        cout<<"Enter new last name:  "<<endl;
+        char c[10];
+        cin>>c;
+        memcpy(dvr.lastname,c,10);
+    }
+    else if(x==3){
+        cout<<"Enter new Phone number:  "<<endl;
+        char c[12];
+        cin>>c;
+        memcpy(dvr.lastname,c,12);
+    }
+    else if(x==4){
+        cout<<"Enter new velciyt:  "<<endl;
+        int y;
+        dvr.v.velocity=y;
+    }
+    else if(x==5){
+        cout<<"Enter new capacity:  "<<endl;
+        int y;
+        cin>>y;
+        dvr.v.capacity=y;
+    }
+    EditDriversInfo(dvr);
+    drivers();
 }
 
 

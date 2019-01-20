@@ -26,7 +26,7 @@ int getTicketID(){
         return x;
     }
 }
-
+//TODO bia az inja estefade kon
 vector<Ticket> getTicketByTrip(int tripId){
     vector<Ticket> rt;
     vector<Ticket> tickets=return_tickets();

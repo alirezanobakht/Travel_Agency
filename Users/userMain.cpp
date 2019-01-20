@@ -287,6 +287,7 @@ void create_show_ticket_panel(User _user){
             add_text_to_raw_menu(to_string(tickets[i].id), w / 2 - 3, Y + 1);
             add_text_to_raw_menu("[#]", 2, Y + 1);
             create_raw_menu(h, w, 1, Y + 2, false, 0);
+            add_text_to_raw_menu("Name : "+(string)tickets[i].fname+" "+(string)tickets[i].lname,2,Y+3);
             add_text_to_raw_menu("From : "+to_string(tickets[i].ticket_trip.src), 9, Y + 4);
             add_text_to_raw_menu("To : "+to_string(tickets[i].ticket_trip.dst), 35, Y + 4);
             add_text_to_raw_menu("Seat : "+to_string(tickets[i].seat_number),9,Y+5);
@@ -418,6 +419,7 @@ void create_show_ticket_panel(Ticket _ticket){
     add_text_to_raw_menu(to_string(_ticket.id), w / 2 - 3,2);
     add_text_to_raw_menu("[#]", 2, 2);
     create_raw_menu(h, w, 1, 3, false, 0);
+    add_text_to_raw_menu("Name : "+(string)_ticket.fname+" "+(string)_ticket.lname,2,4);
     add_text_to_raw_menu("From : "+to_string(_ticket.ticket_trip.src), 9, 5);
     add_text_to_raw_menu("To : "+to_string(_ticket.ticket_trip.dst), 35, 5);
     add_text_to_raw_menu("Seat : "+to_string(_ticket.seat_number),9,6);
@@ -556,7 +558,7 @@ Ticket create_guest_register_panel(Trip _trip){
     string lname=input(1,20,'\0',false,true,false);
     gotoXY(18, 8);
     string phone_number=input(11,11,'\0',true,false,false);
-    return create_pay_panel(str_to_char(phone_number,12),_trip);
+    return create_pay_panel(str_to_char(phone_number,12),str_to_char(fname,21),str_to_char(lname,21),_trip);
 }
 //----------------------------------------------------------------------------------------
 int create_pay_panel(User _user){
@@ -599,7 +601,7 @@ int create_pay_panel(User _user){
     return rem;
 
 }
-Ticket create_pay_panel(char phone_number[12],Trip _trip) {
+Ticket create_pay_panel(char phone_number[12],char fname[21],char lname[21],Trip _trip) {
     int rem;
     string bank_account;
     Ticket new_ticket = {};
@@ -640,6 +642,10 @@ Ticket create_pay_panel(char phone_number[12],Trip _trip) {
     if(rem>=_trip.cost) {
         for (int i = 0; i < 12; i++) {
             new_ticket.phone_number[i] = phone_number[i];
+        }
+        for (int i = 0; i < 21; i++) {
+            new_ticket.fname[i] = fname[i];
+            new_ticket.lname[i] = lname[i];
         }
         new_ticket.seat_number=create_choose_seat_panel(_trip);
         new_ticket.id=getTicketID();
@@ -722,6 +728,10 @@ void create_show_trip_panel(int src,int dst,User _user){
             Ticket new_ticket={};
             for(int i=0;i<12;i++){
                 new_ticket.phone_number[i]=_user.phone_number[i];
+            }
+            for (int i = 0; i < 21; i++) {
+                new_ticket.fname[i] = _user.fname[i];
+                new_ticket.lname[i] = _user.lname[i];
             }
             new_ticket.seat_number=create_choose_seat_panel(trips[n]);
             new_ticket.id=getTicketID();

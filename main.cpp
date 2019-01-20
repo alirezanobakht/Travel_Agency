@@ -80,7 +80,6 @@ int main(){
     magha.seats[1] = true;
     magha.seats[0] = true;
     addTrip(magha);
-
     */
     //addTrans(200005,8500,200002,1234,"Ticket");
     while(1){
