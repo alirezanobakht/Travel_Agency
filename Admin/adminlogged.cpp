@@ -17,10 +17,10 @@
 #include "AdminPanels/setting.h"
 #include "AdminPanels/userPanel.h"
 #include "AdminPanels/drivers.h"
-#include "AdminPanels/tickets.h"
+#include "AdminPanels/ticketsPanel.h"
 #include "AdminPanels/offers.h"
 #include "AdminPanels/transaction.h"
-#include "AdminPanels/trips.h"
+#include "AdminPanels/tripsPanel.h"
 using namespace std;
 
 void adminLogged(){
@@ -134,7 +134,7 @@ void adminLogged(){
                 break;
             }
             else if(color==3){
-                tickets();
+                ticketsPanel();
                 break;
             }
             else if(color==4){

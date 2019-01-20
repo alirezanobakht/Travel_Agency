@@ -5,7 +5,9 @@
 #ifndef TRAVEL_AGENCY_AHMADDRIVER_H
 #define TRAVEL_AGENCY_AHMADDRIVER_H
 
+
 #include <vector>
+
 using namespace std;
 
 
@@ -18,7 +20,6 @@ typedef struct vehicle{
     int model=0;
     int capacity=0;
     int velocity=0;
-    //vector<bool> ifSeatsAreNotOccupied;
 } Vehicle;
 
 typedef struct driver{
@@ -51,7 +52,8 @@ vector<Driver> GetDrivers();
  * Returns the place of a special driver in vector.
  * Returns -1 if the username was not found in the vector;
  */
-int findDriver(int username);
+Driver findDriver(int username);
+
 
 
 /*

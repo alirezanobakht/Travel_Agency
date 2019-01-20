@@ -18,10 +18,10 @@ int getTrack(bool b=true){
     if(f==NULL){
         fclose(f);
         FILE * fp = fopen("BankAccounts/trackNumber.dat","wb");
-        int x=100;
+        int x=1000;
         fwrite(&x, sizeof(int),1,fp);
         fclose(fp);
-        return 100;
+        return 1000;
     }
     else{
         int x;
@@ -91,10 +91,10 @@ int addMoney(int accID,int cost){
 //-------------------Reduce Money--------------------------_/
 /*
  * return:
- * 1 : succeed.
- * -3: not enough money.
- * -2:no such account.
- * -1:wrong password.
+ *  1 : succeed.
+ * -3 : not enough money.
+ * -2 :no such account.
+ * -1 :wrong password.
  */
 int reduceMoney(int accID,int password,int cost){
     vector<account> acc=allAccounts();

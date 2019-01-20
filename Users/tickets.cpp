@@ -3,14 +3,48 @@
 //
 
 #include "tickets.h"
+#include "../someThingNecessary.h"
+
+int getTicketID(){
+    FILE * f= fopen("Users/tics/ticketId.dat","rb");
+    if(f==NULL){
+        fclose(f);
+        FILE * fp= fopen("Users/tics/ticketId.dat","wb");
+        int x=1000;
+        fwrite(&x, sizeof(int),1,fp);
+        fclose(fp);
+        return x;
+    }
+    else{
+        int x;
+        fread(&x, sizeof(int),1,f);
+        fclose(f);
+        x++;
+        FILE * fp=fopen("Users/tics/ticketId.dat","wb");
+        fwrite(&x, sizeof(int),1,fp);
+        fclose(fp);
+        return x;
+    }
+}
+
+vector<Ticket> getTicketByTrip(int tripId){
+    vector<Ticket> rt;
+    vector<Ticket> tickets=return_tickets();
+    for(int i=0;i<tickets.size();i++){
+        if(tickets[i].ticket_trip.ID==tripId){
+            rt.push_back(tickets[i]);
+        }
+    }
+    return rt;
+}
 
 void save_def_file(Ticket _ticket){
     FILE* fp_d=fopen("Users/tics/default.def","ab");
-    fwrite(&(_ticket.id),sizeof(char),9,fp_d);
+    fwrite(&(_ticket.id),sizeof(int),1,fp_d);
     fclose(fp_d);
 }
 void save_ticket_file(Ticket _ticket){
-    string file_addr="Users/tics/"+(string)_ticket.id+".tic";
+    string file_addr="Users/tics/"+to_string(_ticket.id)+".tic";
     FILE* fp_t=fopen(file_addr.c_str(),"wb");
     fwrite(&_ticket,sizeof(Ticket),1,fp_t);
     fclose(fp_t);
@@ -18,18 +52,21 @@ void save_ticket_file(Ticket _ticket){
 void save_ticks_def_file(User _user, Ticket _ticket){
     string file_addr="Users/usrs/"+(string)_user.user_name+"/ticks.def";
     FILE* fp_d=fopen(file_addr.c_str(),"ab");
-    fwrite(&(_ticket.id),sizeof(char),9,fp_d);
+    fwrite(&(_ticket.id),sizeof(int),1,fp_d);
     fclose(fp_d);
 }
-vector<Ticket> get_tickets(){
+
+
+vector<Ticket> return_tickets(){
     vector<Ticket> tickets;
     FILE* fp_d=fopen("Users/tics/default.def","rb");
     if(fp_d!=NULL){
         while (true){
-            char id[9]={};
-            fread(&id,sizeof(char),9,fp_d);
-            if(feof(fp_d))break;
-            string file_addr="Users/tics/"+(string)id+".tic";
+            int id;
+            fread(&id,sizeof(int),1,fp_d);
+            if(feof(fp_d))
+                break;
+            string file_addr="Users/tics/"+to_string(id)+".tic";
             Ticket temp={};
             FILE* fp_t=fopen(file_addr.c_str(),"rb");
             fread(&temp, sizeof(Ticket),1,fp_t);
@@ -40,8 +77,8 @@ vector<Ticket> get_tickets(){
     }
     return tickets;
 }
-Ticket get_ticket(char id[9]){
-    string file_addr="Users/tics/"+(string)id+".tic";
+Ticket return_ticket(int id){
+    string file_addr="Users/tics/"+to_string(id) +".tic";
     FILE* fp_t=fopen(file_addr.c_str(),"rb");
     Ticket temp={};
     if(fp_t!=NULL) {
@@ -50,16 +87,17 @@ Ticket get_ticket(char id[9]){
     }
     return temp;
 }
-vector<Ticket> get_user_tickets(User _user){
+vector<Ticket> return_user_tickets(char user_name[9]){
     vector<Ticket> tickets;
-    string file_addr="Users/usrs/"+(string)_user.user_name+"/ticks.def";
+    string file_addr="Users/usrs/"+(string)user_name+"/ticks.def";
     FILE* fp_d=fopen(file_addr.c_str(),"rb");
     if(fp_d!=NULL){
         while (true){
-            char id[9]={};
-            fread(&id,sizeof(char),9,fp_d);
-            if(feof(fp_d))break;
-            file_addr="Users/tics/"+(string)id+".tic";
+            int id;
+            fread(&id,sizeof(int),1,fp_d);
+            if(feof(fp_d))
+                break;
+            file_addr="Users/tics/"+to_string(id)+".tic";
             Ticket temp={};
             FILE* fp_t=fopen(file_addr.c_str(),"rb");
             fread(&temp, sizeof(Ticket),1,fp_t);
@@ -70,55 +108,108 @@ vector<Ticket> get_user_tickets(User _user){
     }
     return tickets;
 }
+
+/*
+ * finds ticket in tics directory
+ * returns the place of the ticket in the vector.
+ */
 long int find_ticket_in_tickets(Ticket _ticket){
-    vector<Ticket> tickets=get_tickets();
+    vector<Ticket> tickets= return_tickets();
     for(long int i=0;i<tickets.size();i++){
-        int j;
-        for(j=0;j<9 && tickets[i].id[j]==_ticket.id[j];j++);
-        if(j==9){
+        if (_ticket.id == tickets[i].id)
             return i;
-        }
     }
     return -1;
 }
-long int find_ticket_in_tickets(Ticket _ticket,User _user){
-    vector<Ticket> tickets=get_user_tickets(_user);
+/*
+ * returns place of the ticket in the user directory tickets.
+ */
+long int find_ticket_in_tickets(int id,char user_name[9]){
+    vector<Ticket> tickets= return_user_tickets(user_name);
     for(long int i=0;i<tickets.size();i++){
-        int j;
-        for(j=0;j<9 && tickets[i].id[j]==_ticket.id[j];j++);
-        if(j==9){
+        if (id == tickets[i].id)
             return i;
-        }
     }
     return -1;
 }
-long int find_ticket_in_file(char id[9]){
-    string file_addr="Users/tics/"+(string)id+".tic";
+/*
+ * you can find if a ticket exists or not
+ * returns 1 : if the ticket was found.
+ * returns -1 : if there are no tickets match for the given ticket.
+ */
+long int find_ticket_in_file(int id){
+    string file_addr="Users/tics/"+to_string(id)+".tic";
     FILE* fp_t=fopen(file_addr.c_str(),"rb");
-    if(fp_t==NULL) return -1;
+    if(fp_t==NULL)
+        return -1;
     fclose(fp_t);
     return 1;
 }
-int add_ticket(Ticket _ticket){
+/*
+ * Adds a new ticket
+ * used for buying tickets.
+ * FOR GUESTS!!!!!!!!!!
+ */
+int add_ticket(Ticket _ticket, int cost,int bank_account){
     if(find_ticket_in_file(_ticket.id)==-1) {
         save_ticket_file(_ticket);
         save_def_file(_ticket);
-        return 1;
+        vector<account> acc = allAccounts();
+        for (int i = 0; i < acc.size(); i++) {
+            if (bank_account == acc[i].ID) {
+                if (acc[i].remaind - cost >= 0) {
+                    string Exp = "Buying Ticket with ID :" + to_string(_ticket.id);
+                    char a[80];
+                    memcpy(a,Exp.c_str(),80);
+                    moveMoney(acc[i].ID,acc[i].password,acc[0].ID, cost/10, a);
+                    string exp = "Having a Trip with ID :" + to_string(_ticket.id);
+                    char b[80];
+                    memcpy(b,exp.c_str(),80);
+                    moveMoney(acc[i].ID,acc[i].password,_ticket.ticket_trip.drvr.bankaccount, (9*cost)/10, b);
+                    return 1;
+                }
+                return -1;
+            }
+        }
     }
-    return -1;
+    return -2;
 }
-int add_ticket(Ticket _ticket,User _user){
+/*
+ * Adds a new ticket
+ * used for buying tickets.
+ * FOR USERS!!!!!!!!!!
+ */
+int add_ticket(Ticket _ticket,User _user, int cost){
     if(find_ticket_in_file(_ticket.id)==-1) {
-        add_ticket(_ticket);
-        save_ticks_def_file(_user,_ticket);
-        return 1;
+        save_ticket_file(_ticket);
+        save_def_file(_ticket);
+        save_ticks_def_file(_user, _ticket);
+        vector<account> acc = allAccounts();
+        for (int i = 0; i < acc.size(); i++) {
+            if (atoi(_user.bank_account) == acc[i].ID) {
+                if (acc[i].remaind - cost >= 0) {
+                    string Exp = "Buying Ticket with ID :" + to_string(_ticket.id);
+                    char a[80];
+                    memcpy(a,Exp.c_str(),80);
+                    moveMoney(acc[i].ID,acc[i].password,acc[0].ID, cost/10, a);
+                    string exp = "Having a Trip with ID :" + to_string(_ticket.id);
+                    char b[80];
+                    memcpy(b,exp.c_str(),80);
+                    moveMoney(acc[i].ID,acc[i].password,_ticket.ticket_trip.drvr.bankaccount, (9*cost)/10, b);
+                    return 1;
+                }
+                return -1;
+            }
+        }
     }
-    return -1;
+    return -2;
 }
-int remove_ticket(Ticket _ticket){
-    if(find_ticket_in_file(_ticket.id)!=-1) {
-        vector<Ticket> tickets=get_tickets();
-        string file_addr="Users/tics/"+(string)_ticket.id+".tic";
+int remove_ticket(int id,int bank_account){
+    if(find_ticket_in_file(id)!=-1) {
+        vector<Ticket> tickets= return_tickets();
+        string file_addr="Users/tics/"+to_string(id)+".tic";
+        ticket _ticket={};
+        _ticket.id=id;
         long int point=find_ticket_in_tickets(_ticket);
         tickets.erase(tickets.begin()+point);
         remove("Users/tics/default.def");
@@ -126,15 +217,35 @@ int remove_ticket(Ticket _ticket){
         for(int i=0;i<tickets.size();i++){
             save_def_file(tickets[i]);
         }
+        int pwd;
+        vector<account> accs=allAccounts();
+        for(int i=0;i<accs.size();i++){
+            if(accs[i].ID==bank_account){
+                pwd=accs[i].password;
+            }
+        }
+
+        vector<Ticket> tks=return_tickets();
+        Ticket tk={};
+        tk.id=id;
+        int p=find_ticket_in_tickets(tk);
+
+        string  str="You have Cancelled a ticket with ID : "+to_string(id);
+        char cr[50];
+        memcpy(cr,str.c_str(),50);
+        int pr=int(tks[p].ticket_trip.cost*penaltyPrice(tks[p]));
+
+        moveMoney(bank_account,pwd,accs[0].ID,pr*9/10,cr);
+        moveMoney(bank_account,pwd,tks[p].ticket_trip.drvr.bankaccount,pr/10,cr);
         return 1;
     }
     return -1;
 }
-int remove_ticket(Ticket _ticket,User _user){
-    if(find_ticket_in_file(_ticket.id)!=-1) {
+int remove_ticket(int id,User _user){
+    if(find_ticket_in_file(id)!=-1) {
         string file_addr="Users/usrs/"+(string)_user.user_name+"/ticks.def";
-        vector<Ticket> tickets=get_user_tickets(_user);
-        long int point=find_ticket_in_tickets(_ticket,_user);
+        vector<Ticket> tickets= return_user_tickets(_user.user_name);
+        long int point=find_ticket_in_tickets(id,_user.user_name);
         if(point!=-1){
             tickets.erase(tickets.begin()+point);
             remove(file_addr.c_str());
@@ -142,9 +253,51 @@ int remove_ticket(Ticket _ticket,User _user){
         for(int i=0;i<tickets.size();i++){
             save_ticks_def_file(_user,tickets[i]);
         }
-        remove_ticket(_ticket);
+        vector<Ticket> tickets2= return_tickets();
+        string file_addr2="Users/tics/"+to_string(id)+".tic";
+        ticket _ticket={};
+        _ticket.id=id;
+        long int point2=find_ticket_in_tickets(_ticket);
+        tickets2.erase(tickets2.begin()+point2);
+        remove("Users/tics/default.def");
+        remove(file_addr2.c_str());
+        for(int i=0;i<tickets2.size();i++){
+            save_def_file(tickets2[i]);
+        }
+        int pwd;
+        vector<account> accs=allAccounts();
+        for(int i=0;i<accs.size();i++){
+            if(accs[i].ID==atoi(_user.bank_account)){
+                pwd=accs[i].password;
+            }
+        }
+
+        vector<Ticket> tks=return_tickets();
+        Ticket tk={};
+        tk.id=id;
+        int p=find_ticket_in_tickets(tk);
+
+        string  str="You have Cancelled a ticket with ID : "+to_string(id);
+        char cr[50];
+        memcpy(cr,str.c_str(),50);
+        int pr=int(tks[p].ticket_trip.cost*penaltyPrice(tks[p]));
+
+        moveMoney(atoi(_user.bank_account),pwd,accs[0].ID,pr*9/10,cr);
+        moveMoney(atoi(_user.bank_account),pwd,tks[p].ticket_trip.drvr.bankaccount,pr/10,cr);
         return 1;
     }
     return -1;
+}
+
+double penaltyPrice(Ticket _ticket){
+    myDate Now = nowTime();
+    if (_ticket.ticket_trip.date.year - Now.year >= 0 && _ticket.ticket_trip.date.month - Now.month >= 0 && _ticket.ticket_trip.date.day - Now.day > 0 ){
+        return 0.9;
+    } else if (_ticket.ticket_trip.date.year - Now.year == 0 && _ticket.ticket_trip.date.month - Now.month == 0 && _ticket.ticket_trip.date.day - Now.day == 0 ){
+        if (_ticket.ticket_trip.date.hour - Now.hour > 1)
+            return 0.9;
+    } else {
+        return 0.5;
+    }
 }
 //-------------------------------------------------------------------------------------------

@@ -22,6 +22,8 @@ void cursor_enable(){
 bool goto_intro_panel=false;
 bool is_guset=false;
 bool is_ticket_cancel=false;
+bool goto_user_panel=false;
+bool goto_guest_panel=false;
 //----------------------------------------------------------------------------------------
 char*str_to_char(string str,int length){
     char *ch=(char*)malloc(sizeof(char)*length);
@@ -80,7 +82,7 @@ void create_user_intro_panel(){
                 create_user_register_panel();
                 break;
             case 2:
-                create_buy_ticket_panel();
+                create_gust_panel();
                 break;
             case 3:
                 main();
@@ -175,6 +177,7 @@ void create_user_register_panel(){
 //----------------------------------------------------------------------------------------
 void create_user_panel(User _user){
     while(true) {
+        goto_user_panel=false;
         if(goto_intro_panel) return;
         create_raw_menu(3,46,1,1,true);
         add_text_to_raw_menu("Hello "+(string)_user.fname+" "+(string)_user.lname+".",3,2);
@@ -211,6 +214,33 @@ void create_user_panel(User _user){
         }
     }
 }
+void create_gust_panel(){
+    while(true) {
+        goto_guest_panel=false;
+        int items[3][2] = {{4, 3},{4, 4},{4, 8}};
+        int h = 10;
+        int w = 46;
+        create_raw_menu(h, w,1,1, true);
+        add_text_to_raw_menu("[1] Show Ticket.", 3, 3);
+        add_text_to_raw_menu("[2] Buy New Ticket.", 3, 4);
+        for (int i = 2; i < w; i++) {
+            add_text_to_raw_menu("-", i, 6);
+        }
+        add_text_to_raw_menu("[#] Back To Previous Panel.", 3, 8);
+        int i = move_between_items(items, 3);
+        switch (i) {
+            case 0:
+                create_get_ticket_id_panel();
+                break;
+            case 1:
+                create_buy_ticket_panel();
+                break;
+            case 2:
+                return;
+        }
+    }
+
+}
 //----------------------------------------------------------------------------------------
 void create_setting_panel(User _user){
     while(true) {
@@ -241,7 +271,7 @@ void create_setting_panel(User _user){
 }
 void create_show_ticket_panel(User _user){
     clearIt();
-    vector<ticket> tickets=get_user_tickets(_user);
+    vector<ticket> tickets= return_user_tickets(_user.user_name);
     if(tickets.size()>0) {
         int **items = (int **) malloc(sizeof(int *) * tickets.size());
         for (int i = 0; i < tickets.size(); i++)
@@ -254,44 +284,48 @@ void create_show_ticket_panel(User _user){
             items[i][1] = Y + 1;
             create_raw_menu(3, 5, 1, Y, false, 0);
             create_raw_menu(3, w, 1, Y, false, 0);
-            add_text_to_raw_menu(tickets[i].id, w / 2 - 3, Y + 1);
-            add_text_to_raw_menu("[ ]", 2, Y + 1);
+            add_text_to_raw_menu(to_string(tickets[i].id), w / 2 - 3, Y + 1);
+            add_text_to_raw_menu("[#]", 2, Y + 1);
             create_raw_menu(h, w, 1, Y + 2, false, 0);
-            add_text_to_raw_menu("From : ", 9, Y + 4);
-            add_text_to_raw_menu("To : ", 35, Y + 4);
-            add_text_to_raw_menu("Start Date : ", 3, Y + 6);
+            add_text_to_raw_menu("From : "+to_string(tickets[i].ticket_trip.src), 9, Y + 4);
+            add_text_to_raw_menu("To : "+to_string(tickets[i].ticket_trip.dst), 35, Y + 4);
+            add_text_to_raw_menu("Seat : "+to_string(tickets[i].seat_number),9,Y+5);
+            add_text_to_raw_menu("Start Date : "+to_string(tickets[i].ticket_trip.date.month)+"/"+to_string(tickets[i].ticket_trip.date.day)+"/"+to_string(tickets[i].ticket_trip.date.year), 3, Y + 6);
+            add_text_to_raw_menu(" At : "+to_string(tickets[i].ticket_trip.date.hour)+":"+to_string(tickets[i].ticket_trip.date.min),35,Y+6);
             for (int i = 2; i < w; i++) {
                 add_text_to_raw_menu("-", i, Y + 8);
             }
-            add_text_to_raw_menu("Cost : " + to_string(tickets[i].cost), 3, Y + 9);
+            add_text_to_raw_menu("Cost : " + to_string(tickets[i].ticket_trip.cost), 3, Y + 9);
         }
         int n = move_between_items(items, (int) tickets.size());
+        create_cancel_ticket_panel(tickets[n],_user);
     }else{
         add_text_to_raw_menu("No Tickets Found.", 1, 1);
         input(0, 0, '\0', false, false, false);
     }
 }
 void create_show_transaction_panel(User _user){
-    int n=create_pay_panel(_user);
-    if(n==-1) return;
+    int rem=create_pay_panel(_user);
+    if(rem==-1) return;
     vector<trans> transactions=getAllTrans(atoi(_user.bank_account));
     int h=4+transactions.size();
     int w=120;
     if(transactions.size()>0){
-        create_raw_menu(3,120,1,1,true);
-        create_raw_menu(h,w,1,3,false);
-        add_text_to_raw_menu("   ID   |   From   |   To   |   Cost   |   MM/DD/YY   |   HH:MM   |                   Explanation                    ",2,2);
+        create_raw_menu(3,120,1,2,true);
+        create_raw_menu(h,w,1,4,false);
+        add_text_to_raw_menu("Your Account Charge Is "+to_string(rem),1,1);
+        add_text_to_raw_menu("   ID   |   From   |   To   |   Cost   |   MM/DD/YY   |   HH:MM   |                   Explanation                    ",2,3);
 
     for(int i=0;i<transactions.size();i++){
         add_text_to_raw_menu(to_string(transactions[i].trackingNumber)
         +"|"+((atoi(_user.bank_account)==transactions[i].dest)?"   You.   ":to_string(transactions[i].dest))
         +"|"+((atoi(_user.bank_account)==transactions[i].dest)?to_string(transactions[i].dest):"   You.   ")
-        +"|"+to_string(transactions[i].cost)
+        +"|"+to_string(abs(transactions[i].cost))
         +"|   "+to_string(transactions[i].d.month)+"/"+to_string(transactions[i].d.day)+"/"+to_string(transactions[i].d.year)
         +"   |   "+to_string(transactions[i].d.hour)+":"+to_string(transactions[i].d.min)
-        +"   |"+(string)transactions[i].exp,3,i+5);
+        +"   |"+(string)transactions[i].exp,3,i+6);
     }
-    gotoXY(1,transactions.size()+6);
+    gotoXY(1,transactions.size()+7);
     }else{
         clearIt();
         add_text_to_raw_menu("No Transaction Found.",1,1);
@@ -300,12 +334,14 @@ void create_show_transaction_panel(User _user){
 }
 void create_buy_ticket_panel(User _user) {
     while (true) {
-        int items[2][2] = {{4, 2},{5, 9}};
+        if(goto_user_panel) break;
+        int items[2][2] = {{4, 2},
+                           {5, 9}};
         int h = 11;
         int w = 58;
         create_raw_menu(h, w, 1, 1, true);
-        add_text_to_raw_menu("[#] Enter Origin City And Destination City.", 3, 2);
-        add_text_to_raw_menu("Origin City : ", 3, 4);
+        add_text_to_raw_menu("[#] Enter The Starting City And Destination City.", 3, 2);
+        add_text_to_raw_menu("Starting City : ", 3, 4);
         add_text_to_raw_menu("Destination City : ", 3, 5);
         for (int i = 2; i < w; i++) {
             add_text_to_raw_menu("-", i, 7);
@@ -313,7 +349,7 @@ void create_buy_ticket_panel(User _user) {
         add_text_to_raw_menu("[#] Back To Previous Panel.", 4, 9);
         int n = move_between_items(items, 2);
         if (n == 1) break;
-        gotoXY(17, 4);
+        gotoXY(19, 4);
         string src = input(1, 8, '\0', true, false, false);
         gotoXY(22, 5);
         string dst = input(1, 8, '\0', true, false, false);
@@ -322,13 +358,14 @@ void create_buy_ticket_panel(User _user) {
 }
 void create_buy_ticket_panel() {
     while (true) {
+        if(goto_guest_panel) break;
         int items[2][2] = {{4, 2},
                            {5, 9}};
         int h = 11;
         int w = 58;
         create_raw_menu(h, w, 1, 1, true);
-        add_text_to_raw_menu("[#] Enter Origin City And Destination City.", 3, 2);
-        add_text_to_raw_menu("Origin City : ", 3, 4);
+        add_text_to_raw_menu("[#] Enter The Starting City And Destination City.", 3, 2);
+        add_text_to_raw_menu("Starting City : ", 3, 4);
         add_text_to_raw_menu("Destination City : ", 3, 5);
         for (int i = 2; i < w; i++) {
             add_text_to_raw_menu("-", i, 7);
@@ -336,12 +373,62 @@ void create_buy_ticket_panel() {
         add_text_to_raw_menu("[#] Back To Previous Panel.", 4, 9);
         int n = move_between_items(items, 2);
         if (n == 1) break;
-        gotoXY(17, 4);
+        gotoXY(19, 4);
         string src = input(1, 8, '\0', true, false, false);
         gotoXY(22, 5);
         string dst = input(1, 8, '\0', true, false, false);
         create_show_trip_panel(atoi(src.c_str()), atoi(dst.c_str()));
     }
+}
+void create_get_ticket_id_panel(){
+    string ticket_id;
+    while (true) {
+        int items[2][2] = {{15, 3},{5,  7}};
+        is_guset = true;
+        int h = 9;
+        int w = 49;
+        create_raw_menu(h, w, 1, 1, true);
+        add_text_to_raw_menu("Ticket ID : ", 3, 3);
+        for (int i = 2; i < w; i++) {
+            add_text_to_raw_menu("-", i, 5);
+        }
+        add_text_to_raw_menu("[#] Cancel", 4, 7);
+        int n = move_between_items(items, 2);
+        if (n == 1) {
+            return;
+        }
+        gotoXY(15,3);
+        ticket_id=input(1,8,'\0',true,false,false);
+        if(find_ticket_in_file(atoi(ticket_id.c_str()))==1) break;
+        else{
+            create_raw_menu(3,w,1,h+1, false);
+            add_text_to_raw_menu("Ticket Not Found Please Enter Again.",3,h+2);
+            Sleep(1500);
+        }
+    }
+    Ticket new_ticket= return_ticket(atoi(ticket_id.c_str()));
+    create_show_ticket_panel(new_ticket);
+
+}
+void create_show_ticket_panel(Ticket _ticket){
+    int h = 9;
+    int w = 64;
+    create_raw_menu(3, 5, 1, 1, true, 0);
+    create_raw_menu(3, w, 1, 1, false, 0);
+    add_text_to_raw_menu(to_string(_ticket.id), w / 2 - 3,2);
+    add_text_to_raw_menu("[#]", 2, 2);
+    create_raw_menu(h, w, 1, 3, false, 0);
+    add_text_to_raw_menu("From : "+to_string(_ticket.ticket_trip.src), 9, 5);
+    add_text_to_raw_menu("To : "+to_string(_ticket.ticket_trip.dst), 35, 5);
+    add_text_to_raw_menu("Seat : "+to_string(_ticket.seat_number),9,6);
+    add_text_to_raw_menu("Start Date : "+to_string(_ticket.ticket_trip.date.month)+"/"+to_string(_ticket.ticket_trip.date.day)+"/"+to_string(_ticket.ticket_trip.date.year), 3, 7);
+    for (int i = 2; i < w; i++) {
+        add_text_to_raw_menu("-", i, 9);
+    }
+    add_text_to_raw_menu("Cost : " + to_string(_ticket.ticket_trip.cost), 3, 10);
+    gotoXY(3,2);
+    input(0,0,'\0',false,false,false);
+    //create_cancel_ticket_panel(_ticket);
 }
 //----------------------------------------------------------------------------------------
 void create_delete_panel(User _user){
@@ -444,7 +531,7 @@ void create_edit_panel(User _user){
     }
 }
 //----------------------------------------------------------------------------------------
-void create_guest_register_panel(){
+Ticket create_guest_register_panel(Trip _trip){
     int items[2][2]={{16,4},{5,12}};
     is_guset=true;
     int h = 14;
@@ -461,7 +548,7 @@ void create_guest_register_panel(){
     int n=move_between_items(items,2);
     if(n==1){
         is_ticket_cancel=true;
-        return;
+        return Ticket{};
     }
     gotoXY(16, 4);
     string fname=input(1,20,'\0',false,true,false);
@@ -469,11 +556,11 @@ void create_guest_register_panel(){
     string lname=input(1,20,'\0',false,true,false);
     gotoXY(18, 8);
     string phone_number=input(11,11,'\0',true,false,false);
-    create_pay_panel();
-    //TODO dorso kon injaro
+    return create_pay_panel(str_to_char(phone_number,12),_trip);
 }
 //----------------------------------------------------------------------------------------
 int create_pay_panel(User _user){
+    int rem;
     while(true) {
         int items[2][2] = {{14, 5},
                            {5,  9}};
@@ -494,7 +581,7 @@ int create_pay_panel(User _user){
         }
         gotoXY(14, 5);
         string bank_account_pass = input(1, 8, '*', true, true, true);
-        int rem=remainder(atoi(_user.bank_account),atoi(bank_account_pass.c_str()));
+        rem=remainder(atoi(_user.bank_account),atoi(bank_account_pass.c_str()));
         if(rem>=0) break;
         if(rem==-1) {
             create_raw_menu(3, 44, 1, 12, false);
@@ -509,10 +596,13 @@ int create_pay_panel(User _user){
 
 
     }
-    return 1;
+    return rem;
 
 }
-int create_pay_panel() {
+Ticket create_pay_panel(char phone_number[12],Trip _trip) {
+    int rem;
+    string bank_account;
+    Ticket new_ticket = {};
     while (true) {
         int items[2][2] = {{18, 3},{5,  9}};
         is_guset = true;
@@ -528,13 +618,13 @@ int create_pay_panel() {
         int n = move_between_items(items, 2);
         if (n == 1) {
             is_ticket_cancel = true;
-            return -1;
+            return new_ticket;
         }
         gotoXY(18, 3);
-        string bank_account = input(1, 10, '\0', true, false, false);
+        bank_account = input(1, 10, '\0', true, false, false);
         gotoXY(14, 5);
         string bank_account_pass = input(1, 8, '*', true, true, true);
-        int rem = remainder(atoi(bank_account.c_str()), atoi(bank_account_pass.c_str()));
+        rem = remainder(atoi(bank_account.c_str()), atoi(bank_account_pass.c_str()));
         if (rem >= 0) break;
         if (rem == -1) {
             create_raw_menu(3, 49, 1, 12, false);
@@ -546,66 +636,199 @@ int create_pay_panel() {
             Sleep(1500);
         }
     }
-    //TODO kam kardan pool az hesab
-    return 1;
+
+    if(rem>=_trip.cost) {
+        for (int i = 0; i < 12; i++) {
+            new_ticket.phone_number[i] = phone_number[i];
+        }
+        new_ticket.seat_number=create_choose_seat_panel(_trip);
+        new_ticket.id=getTicketID();
+        new_ticket.ticket_trip = _trip;
+        new_ticket.ticket_trip.seats[new_ticket.seat_number-1]=true;
+        vector<Trip> alltrips=getAllTrip();
+        for(int i=0;i<alltrips.size();i++){
+            if(_trip.ID==alltrips[i].ID){
+                alltrips[i].seats[new_ticket.seat_number-1]=true;
+                updateTrip(alltrips);
+                break;
+            }
+        }
+        int m = add_ticket(new_ticket, _trip.cost, atoi(bank_account.c_str()));
+    }
+    return new_ticket;
 }
 //----------------------------------------------------------------------------------------
-int create_choose_seat_panel(){
-    return 0;
+int create_choose_seat_panel(Trip _trip){
+    int seat_number=-1;
+    while (true) {
+        int items[2][2] = {{17, 3},{5,  7}};
+        is_guset = true;
+        int h = 9;
+        int w = 49;
+        create_raw_menu(h, w, 1, 1, true);
+        add_text_to_raw_menu("Please Enter Number Between 1-"+to_string(_trip.drvr.v.capacity),2,2);
+        add_text_to_raw_menu("Seat Number : ", 3, 3);
+        for (int i = 2; i < w; i++) {
+            add_text_to_raw_menu("-", i, 5);
+        }
+        add_text_to_raw_menu("[#] Cancel", 4, 7);
+        int n = move_between_items(items, 2);
+        if (n == 1) {
+            return -1;
+        }
+        gotoXY(17,3);
+        seat_number=atoi(input(1,4,'\0',true,false,false).c_str());
+        if(_trip.seats[seat_number-1]==false) break;
+        else{
+            create_raw_menu(3,w,1,h+1, false);
+            add_text_to_raw_menu("Seat "+to_string(seat_number)+" Is Full Please Enter Another.",3,h+2);
+            Sleep(1500);
+        }
+    }
+    return seat_number;
 }
 void create_show_trip_panel(int src,int dst,User _user){
-    vector<Trip> trips=getTrip(src,dst);
-    int h = 4+trips.size();
-    int w = 58;
+    is_ticket_cancel=false;
+    vector<Trip> trips= getTripUser(src, dst);
+    int h = 10+trips.size();
+    int w = 100;
     if(trips.size()>0) {
         create_raw_menu(h, w, 1, 2, true);
-        int **items = (int **) malloc(sizeof(int *) * trips.size());
-        for (int i = 0; i < trips.size(); i++)
+        int **items = (int **) malloc(sizeof(int *) * (trips.size()+1));
+        for (int i = 0; i < trips.size()+1; i++)
             items[i] = (int *) malloc(sizeof(int) * 2);
         add_text_to_raw_menu("From : " + to_string(src) + "     To : " + to_string(dst), 1, 1);
+        add_text_to_raw_menu("Fount "+to_string(trips.size())+" Trip(s).", 2, 3);
         for (int i = 0; i < trips.size(); i++) {
             add_text_to_raw_menu(
-                    "[#] Date : " + to_string(trips[i].date.month) + "/" + to_string(trips[i].date.day) + "/" +
-                    to_string(trips[i].date.year)
+                    "[#] Date : " + to_string(trips[i].date.month) + "/" + to_string(trips[i].date.day) + "/" + to_string(trips[i].date.year)
                     + "|Driver : " + trips[i].drvr.fname + " " + trips[i].drvr.lastname
                     + "|Estimate Time : " + to_string(trips[i].estimate) + " Min"
-                    + "|Cost : " + to_string(trips[i].cost), 3, i + 3);
-            items[i][0]=5;
-            items[i][1]=i+3;
+                    + "|Cost : " + to_string(trips[i].cost), 3, i + 5);
+            items[i][0]=4;
+            items[i][1]=i+5;
         }
-        int n=move_between_items(items,trips.size());
+        for (int i = 2; i < w; i++) {
+            add_text_to_raw_menu("-", i, trips.size()+7);
+        }
+        add_text_to_raw_menu("[#] Cancel.", 4, trips.size()+9);
+        items[trips.size()][0]=5;
+        items[trips.size()][1]=trips.size()+9;
+        int n=move_between_items(items,trips.size()+1);
+        if(n==trips.size())
+            return;
+        int remain=create_pay_panel(_user);
+        if(remain>=trips[n].cost){
+            Ticket new_ticket={};
+            for(int i=0;i<12;i++){
+                new_ticket.phone_number[i]=_user.phone_number[i];
+            }
+            new_ticket.seat_number=create_choose_seat_panel(trips[n]);
+            new_ticket.id=getTicketID();
+            new_ticket.ticket_trip=trips[n];
+            trips[n].seats[new_ticket.seat_number-1]=true;
+            vector<Trip> alltrips=getAllTrip();
+            for(int i=0;i<alltrips.size();i++){
+                if(trips[n].ID==alltrips[i].ID){
+                    alltrips[i].seats[new_ticket.seat_number-1]=true;
+                    updateTrip(alltrips);
+                    break;
+                }
+            }
+            int m=add_ticket(new_ticket,_user,trips[n].cost);
+            if(m==1) goto_user_panel=true;
+        }else if(remain!=-1){
+            create_raw_menu(3,48,1,1,true);
+            add_text_to_raw_menu("Your Dont Have Enough Balance In Your Account.",3,2);
+            Sleep(1500);
+        }
     }else{
+        clearIt();
         add_text_to_raw_menu("No Trips Found By Your Filter.",1,1);
         input(0,0,'\0',false,false,false);
     }
-    //TODO buy ticket from trips[i] and _user and call create_pay_panel(User)
 
 }
 void create_show_trip_panel(int src,int dst){
-    vector<Trip> trips=getTrip(src,dst);
-    int h = 4+trips.size();
-    int w = 58;
+    is_ticket_cancel= false;
+    vector<Trip> trips= getTripUser(src, dst);
+    int h = 10+trips.size();
+    int w = 100;
     if(trips.size()>0) {
         create_raw_menu(h, w, 1, 2, true);
-        int **items = (int **) malloc(sizeof(int *) * trips.size());
-        for (int i = 0; i < trips.size(); i++)
+        int **items = (int **) malloc(sizeof(int *) * (trips.size()+1));
+        for (int i = 0; i < trips.size()+1; i++)
             items[i] = (int *) malloc(sizeof(int) * 2);
         add_text_to_raw_menu("From : " + to_string(src) + "     To : " + to_string(dst), 1, 1);
+        add_text_to_raw_menu("Fount "+to_string(trips.size())+" Trip(s).", 2, 3);
         for (int i = 0; i < trips.size(); i++) {
             add_text_to_raw_menu(
-                    "[#] Date : " + to_string(trips[i].date.month) + "/" + to_string(trips[i].date.day) + "/" +
-                    to_string(trips[i].date.year)
+                    "[#] Date : " + to_string(trips[i].date.month) + "/" + to_string(trips[i].date.day) + "/" + to_string(trips[i].date.year)
                     + "|Driver : " + trips[i].drvr.fname + " " + trips[i].drvr.lastname
                     + "|Estimate Time : " + to_string(trips[i].estimate) + " Min"
-                    + "|Cost : " + to_string(trips[i].cost), 3, i + 3);
-            items[i][0]=5;
-            items[i][1]=i+3;
+                    + "|Cost : " + to_string(trips[i].cost), 3, i + 5);
+            items[i][0]=4;
+            items[i][1]=i+5;
         }
-        int n=move_between_items(items,trips.size());
+        for (int i = 2; i < w; i++) {
+            add_text_to_raw_menu("-", i, trips.size()+7);
+        }
+        add_text_to_raw_menu("[#] Cancel.", 4, trips.size()+9);
+        items[trips.size()][0]=5;
+        items[trips.size()][1]=trips.size()+9;
+        int n=move_between_items(items,trips.size()+1);
+        if(n==trips.size()) return;
+        Ticket new_ticket=create_guest_register_panel(trips[n]);
+        if(new_ticket.phone_number[0]!='\0') {
+            create_show_ticket_panel(new_ticket);
+            goto_guest_panel=true;
+        }
+        else if(is_ticket_cancel!= true){
+            create_raw_menu(3,48,1,1,true);
+            add_text_to_raw_menu("Your Dont Have Enough Balance In Your Account.",3,2);
+            Sleep(1500);
+        }
     }else{
+        clearIt();
         add_text_to_raw_menu("No Trips Found By Your Filter.",1,1);
         input(0,0,'\0',false,false,false);
     }
-    //TODO buy ticket from trips[i] AND call create_guest_register_panel()
-    //TODO age pool kam shod seda zandan add_ticket();
+}
+//----------------------------------------------------------------------------------------
+void create_cancel_ticket_panel(Ticket _ticket){
+    int items[2][2] = {{4, 4},{4, 5}};
+    int h = 8;
+    int w = 39;
+    create_raw_menu(h, w,1,1, true);
+    add_text_to_raw_menu("Do You Want To Cancel Your Ticket?", 3, 2);
+    add_text_to_raw_menu("[#] Yes.", 3, 4);
+    add_text_to_raw_menu("[#] No.", 3, 5);
+    int i = move_between_items(items, 2);
+    switch (i) {
+        case 0:
+            //remove_ticket(_ticket.id,);
+            goto_guest_panel=true;
+            goto_intro_panel=true;
+            break;
+        case 1:
+            break;
+    }
+}
+void create_cancel_ticket_panel(Ticket _ticket,User _user){
+    int items[2][2] = {{4, 4},{4, 5}};
+    int h = 8;
+    int w = 39;
+    create_raw_menu(h, w,1,1, true);
+    add_text_to_raw_menu("Do You Want To Cancel Your Ticket?", 3, 2);
+    add_text_to_raw_menu("[#] Yes.", 3, 4);
+    add_text_to_raw_menu("[#] No.", 3, 5);
+    int i = move_between_items(items, 2);
+    switch (i) {
+        case 0:
+            remove_ticket(_ticket.id,_user);
+            goto_user_panel=true;
+            break;
+        case 1:
+            break;
+    }
 }

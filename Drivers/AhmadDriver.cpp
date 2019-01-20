@@ -55,6 +55,8 @@ vector<Driver> GetDrivers(){
     return drivers;
 }
 
+
+
 void saveUsernamesToDefaultFile(vector<Driver> AllDrivers){
     FILE * fp = fopen("Drivers/usrs/Default.dat","wb");
     for (int i=0; i < AllDrivers.size(); i++){
@@ -123,11 +125,11 @@ int EditDriversInfo(Driver driver){
 }
 
 
-int findDriver(int username){
+Driver findDriver(int username){
     vector<Driver> drivers = GetDrivers();
     for (int i=0; i < drivers.size(); i++){
         if (drivers[i].username == username)
-            return i;
+            return drivers[i];
     }
-    return -1;
+
 }

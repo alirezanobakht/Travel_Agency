@@ -57,19 +57,21 @@ CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/setting.cpp.obj: main.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/setting.cpp.obj: myAll.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/setting.cpp.obj: someThingNecessary.h
 
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Admin/AdminPanels/setting.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Admin/AdminPanels/tickets.cpp
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Admin/AdminPanels/tickets.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Admin/admin.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Admin/adminlogged.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: BankAccounts/account_func.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Cities/city.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Drivers/AhmadDriver.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: Trip/trip.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: UI/UI.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: main.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: myAll.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj: someThingNecessary.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Admin/AdminPanels/setting.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Admin/AdminPanels/ticketsPanel.cpp
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Admin/AdminPanels/ticketsPanel.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Admin/admin.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Admin/adminlogged.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Cities/city.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Trip/trip.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: UI/UI.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Users/define.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: Users/tickets.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: main.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: myAll.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj: someThingNecessary.h
 
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.obj: Admin/AdminPanels/setting.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.obj: Admin/AdminPanels/transaction.cpp
@@ -85,24 +87,26 @@ CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.obj: main.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.obj: myAll.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.obj: someThingNecessary.h
 
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Admin/AdminPanels/setting.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Admin/AdminPanels/trips.cpp
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Admin/AdminPanels/trips.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Admin/admin.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Admin/adminlogged.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: BankAccounts/account_func.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Cities/city.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Drivers/AhmadDriver.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: Trip/trip.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: UI/UI.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: main.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: myAll.h
-CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj: someThingNecessary.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Admin/AdminPanels/setting.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Admin/AdminPanels/tripsPanel.cpp
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Admin/AdminPanels/tripsPanel.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Admin/admin.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Admin/adminlogged.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Cities/city.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: Trip/trip.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: UI/UI.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: main.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: myAll.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj: someThingNecessary.h
 
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Admin/AdminPanels/userPanel.cpp
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Admin/AdminPanels/userPanel.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Admin/adminlogged.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Trip/trip.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: UI/UI.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Users/define.h
 CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/userPanel.cpp.obj: Users/users.h
@@ -124,9 +128,9 @@ CMakeFiles/Travel_Agency.dir/Admin/admin.cpp.obj: someThingNecessary.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/drivers.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/offers.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/setting.h
-CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/tickets.h
+CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/ticketsPanel.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/transaction.h
-CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/trips.h
+CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/tripsPanel.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/AdminPanels/userPanel.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/admin.h
 CMakeFiles/Travel_Agency.dir/Admin/adminlogged.cpp.obj: Admin/adminlogged.cpp
@@ -161,10 +165,24 @@ CMakeFiles/Travel_Agency.dir/Drivers/AhmadDriver.cpp.obj: Drivers/AhmadDriver.cp
 CMakeFiles/Travel_Agency.dir/Drivers/AhmadDriver.cpp.obj: Drivers/AhmadDriver.h
 CMakeFiles/Travel_Agency.dir/Drivers/AhmadDriver.cpp.obj: someThingNecessary.h
 
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Cities/city.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Drivers/TripsFunctions.cpp
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Drivers/TripsFunctions.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Drivers/UI/ahmadUI.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: Trip/trip.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: UI/UI.h
+CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj: someThingNecessary.h
+
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: BankAccounts/account_func.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/TripsFunctions.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/UI/ahmadUI.cpp
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Drivers/UI/ahmadUI.h
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: Trip/trip.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: UI/UI.h
+CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: main.h
 CMakeFiles/Travel_Agency.dir/Drivers/UI/ahmadUI.cpp.obj: someThingNecessary.h
 
 CMakeFiles/Travel_Agency.dir/Trip/trip.cpp.obj: Admin/AdminPanels/setting.h
@@ -197,19 +215,16 @@ CMakeFiles/Travel_Agency.dir/Users/mammadUI.cpp.obj: Users/mammadUI.cpp
 CMakeFiles/Travel_Agency.dir/Users/mammadUI.cpp.obj: Users/mammadUI.h
 
 CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: Trip/trip.h
 CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: Users/define.h
 CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: Users/tickets.cpp
 CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: Users/tickets.h
 CMakeFiles/Travel_Agency.dir/Users/tickets.cpp.obj: someThingNecessary.h
 
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Admin/AdminPanels/setting.h
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Admin/admin.h
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Admin/adminlogged.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: BankAccounts/account_func.h
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Cities/city.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Drivers/AhmadDriver.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Trip/trip.h
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: UI/UI.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/define.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/mammadUI.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/tickets.h
@@ -217,18 +232,17 @@ CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/userMain.cpp
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/userMain.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: Users/users.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: main.h
-CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: myAll.h
 CMakeFiles/Travel_Agency.dir/Users/userMain.cpp.obj: someThingNecessary.h
 
 CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: BankAccounts/account_func.h
+CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: Drivers/AhmadDriver.h
+CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: Trip/trip.h
 CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: Users/define.h
 CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: Users/users.cpp
 CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: Users/users.h
 CMakeFiles/Travel_Agency.dir/Users/users.cpp.obj: someThingNecessary.h
 
-CMakeFiles/Travel_Agency.dir/main.cpp.obj: Admin/AdminPanels/setting.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: Admin/admin.h
-CMakeFiles/Travel_Agency.dir/main.cpp.obj: Admin/adminlogged.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: BankAccounts/account_func.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: Cities/city.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: Drivers/AhmadDriver.h
@@ -241,8 +255,6 @@ CMakeFiles/Travel_Agency.dir/main.cpp.obj: Users/tickets.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: Users/userMain.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: Users/users.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: main.cpp
-CMakeFiles/Travel_Agency.dir/main.cpp.obj: main.h
-CMakeFiles/Travel_Agency.dir/main.cpp.obj: myAll.h
 CMakeFiles/Travel_Agency.dir/main.cpp.obj: someThingNecessary.h
 
 CMakeFiles/Travel_Agency.dir/someThingNecessary.cpp.obj: someThingNecessary.cpp

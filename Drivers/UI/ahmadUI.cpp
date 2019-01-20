@@ -12,7 +12,10 @@
 #include <stdlib.h>
 #include "../AhmadDriver.h"
 #include "../../someThingNecessary.h"
-
+#include "../../main.h"
+#include "../../Trip/trip.h"
+#include "../TripsFunctions.h"
+#include "../../BankAccounts/account_func.h"
 //-----------------------------------------------Necessary Functions----------------------------------------------
 /*
 void fullScreen(){
@@ -56,6 +59,7 @@ void gotoxy(int x,int y){
 
 void loginPage(){
     setTitle("Travel Agency");
+    Driver temp_driver = {};
     string stringUsername="";
     string stringPassword="";
     fontColor(128);
@@ -66,6 +70,10 @@ void loginPage(){
     clrscr();
     int x = c.X;
     int y = c.Y;
+    gotoxy(1,y+13);
+    fontColor(128);
+    cout<<"[Ctrl] + F4 : Homepage";
+    //fontColor(128);
     gotoxy(x-3,y);
     cout<<"Username : \n";
     gotoxy (x-3,y+1);
@@ -82,6 +90,10 @@ void loginPage(){
                 continue;
             stringUsername.pop_back();
             clrscr();
+            gotoxy(1,y+13);
+            fontColor(128);
+            cout<<"[Ctrl] + F4 : Homepage";
+            //fontColor(128);
             gotoxy(x-3,y);
             cout<<"Username : ";
             for (int i=0; i < stringUsername.length(); i++)
@@ -89,6 +101,12 @@ void loginPage(){
             gotoxy(x-3,y+1);
             cout<<"Password : ";
             gotoxy(x-3+11+stringUsername.length(),y);
+        }else if (curr == 0){
+            curr = getch();
+            if (curr == 97) {
+                main();
+                break;
+            }
         }else{
             stringUsername += curr;
             cout<<curr;
@@ -104,12 +122,22 @@ void loginPage(){
                 continue;
             stringPassword.pop_back();
             clrscr();
+            gotoxy(1,y+13);
+            fontColor(128);
+            cout<<"[Ctrl] + F4 : Homepage";
+            //fontColor(128);
             gotoxy(x-3,y);
             cout<<"Username : " + stringUsername;
             gotoxy(x-3,y+1);
             cout<<"Password : ";
             for (int i=0; i < stringPassword.length(); i++)
                 cout<<"*";
+        }else if (curr == 0){
+            curr = getch();
+            if (curr == 97){
+                main();
+                break;
+            }
         }else{
             stringPassword += curr;
             cout<<"*";
@@ -129,7 +157,6 @@ void loginPage(){
         Sleep(2000);
         loginPage();
     }
-    Driver temp_driver = {};
     fread(&temp_driver, sizeof(Driver),1,fp_1);
     fclose(fp_1);
     if (VerifyLoginInfo(username, password) == 1 && strcmp("1", password) == 0 ){
@@ -162,7 +189,7 @@ void loginPage(){
                 gotoxy(x-5,y+1);
                 cout << "Loading";
                 Sleep(2000);
-                driversLoginPage(username);
+                driversLoginPage(username, temp_driver);
             } else {
                 clrscr();
                 gotoxy(x-36,y);
@@ -178,11 +205,11 @@ void loginPage(){
         FILE* fp = fopen(fileAddress.c_str(),"rb");
         fread(&temp, sizeof(Driver), 1, fp);
         fclose(fp);
-        fontColor(128);
-        printf("Welcome %s %s",temp.fname,temp.lastname);
+        fontColor(132);
+        printf("Welcome %s %s!",temp.fname,temp.lastname);
         fontColor(112);
         Sleep(2000);
-        driversLoginPage(username);
+        driversLoginPage(username,temp_driver);
     } else if (VerifyLoginInfo(username,password) == -1){
         clrscr();
         gotoxy(x-21,y);
@@ -193,7 +220,7 @@ void loginPage(){
 
 }
 
-void driversLoginPage(int username){
+void driversLoginPage(int username,Driver drvr){
     fontColor(112);
     cout<<" ";
     clrscr();
@@ -208,6 +235,8 @@ void driversLoginPage(int username){
     cout<<"Define a trip";
     gotoxy(x-6,y);
     cout<<"Edit profile";
+    gotoxy(x-12,y+1);
+    cout<<"List of All Transactions";
     int color = 0;
 
     // UpArrow  = 72;
@@ -237,28 +266,38 @@ void driversLoginPage(int username){
         }
         gotoxy(x-6,y);
         cout<<"Edit profile";
+        if (color == 3){
+            fontColor(124);
+        }else {
+            fontColor(112);
+        }
+        gotoxy(x-12,y+1);
+        cout<<"List of All Transactions";
         char dokme = _getch();
         if (dokme == -32) {
             dokme = _getch();
             if (dokme == 72) {
                 color--;
                 if (color == -1)
-                    color = 2;
+                    color = 3;
             } else if (dokme == 80) {
                 color++;
-                if (color == 3)
+                if (color == 4)
                     color =0;
             }
 
         }else if (dokme == 13){
             if (color == 0){
-                listOfTripsDriver(username);
+                listOfAllTripsDriver(username);
             }
             if (color == 1){
-                defineATrip(username);
+                defineNewTrip(username,drvr);
             }
             if (color == 2){
                 editProfilePage(username);
+            }
+            if (color == 3){
+                listOfAllTransactions(username);
             }
         }
         else if (dokme == 0){
@@ -270,20 +309,130 @@ void driversLoginPage(int username){
     loginPage();
 }
 
-void listOfTripsDriver(int username){
-    clrscr();
-    while (true){
 
+void listOfAllTripsDriver(int username){
+    COORD c = getWindowSize();
+    int x = c.X/2;
+    int y = c.Y/2;
+    fontColor(157);
+    cout<<" ";
+    clrscr();
+    while (856985){
+        gotoxy(1,2);
+        fontColor(157);
+        cout<<"Trip ID  |   Starting City   |   Destination   |   Number of Seats   |   Sold Ticket(s)   |   Date   |   Time   |   Estimated Time   |   Cost\n";
+        vector<Trip> allTrips = getTripDriver(username);
+        fontColor(144);
+        if (allTrips.size() == 0){
+            cout<<"There are not any trips available for you to show!";
+        } else {
+            for (int i = 0; i < allTrips.size(); i++) {
+                int soldTickets = NumberOfSoldTickets(allTrips[i], allTrips[i].drvr.v.capacity);
+                cout <<"   "<< allTrips[i].ID << "   |   " << allTrips[i].src << "   |   " << allTrips[i].dst << "   |   "
+                     << allTrips[i].drvr.v.capacity << "   |   " << soldTickets << "   |   " << allTrips[i].date.month << "/"
+                     << allTrips[i].date.day << "/" << allTrips[i].date.year << "   |   " << allTrips[i].date.hour << ":" << allTrips[i].date.min << "':"
+                     << allTrips[i].date.sec <<"\"   |   " << allTrips[i].estimate << "   |   " << allTrips[i].cost<<endl;
+            }
+        }
+        char temp = getch();
+        if (temp == 0){
+            temp = getch();
+            if (temp == 97)
+                break;
+        }
     }
+
+    driversLoginPage(username,findDriver(username));
 }
 
-void defineATrip(int username){
+void listOfAllTransactions(int username){
+    Driver temp = findDriver(username);
     clrscr();
-    /*while (){
+    COORD c = getWindowSize();
+    int x = c.X/2;
+    int y = c.Y/2;
+    gotoxy(x-17,1);
+    cout<<"Verify your password to continue :";
+    gotoxy(x-4,2);
+    cout<<"Acc ID : "<< temp.bankaccount;
+    gotoxy(x-5,3);
+    int password = 0;
+    cout<<"Password : ";
+    cin>>password;
+    if (remainder(temp.bankaccount,password) < 0){
+        clrscr();
+        gotoxy(x-14,y);
+        cout<<"\aPassword is wrong try again.";
+        _sleep(1500);
+        listOfAllTransactions(username);
+    }else {
+        fontColor(12);
+        cout<<" ";
+        clrscr();
+        gotoxy(x-8,y);
+        cout<< "Login Successful!";
+        gotoxy(x-5,y+1);
+        cout<<"Loading...";
+        _sleep(1500);
+        vector<trans> allDriverTransactions = getAllTrans(temp.bankaccount);
+        clrscr();
+        fontColor(7);
+        cout << " ";
+        clrscr();
+        while (85) {
+            gotoxy(1, 1);
+            bool what = true;
+            cout << "Tracking Number   |   From   |   To   |   Money   |   Date   |   Time   |   Explanation";
+            fontColor(11);
+            cout << "      |||||     ";
+            fontColor(12);
+            cout << "Remaining = " << remainder(temp.bankaccount,password)<< endl;
+            if (allDriverTransactions.size() == 0)
+                cout << "   No Transactions found!";
+            else {
+                for (int i = 0; i < allDriverTransactions.size(); i++) {
+                    if (what == true) {
+                        fontColor(2);
+                        what = false;
+                    } else {
+                        fontColor(9);
+                        what = true;
+                    }
+                    if (allDriverTransactions[i].cost < 0) {
+                        cout << allDriverTransactions[i].trackingNumber << "   |   " << "You"
+                             << "   |   " << allDriverTransactions[i].dest
+                             << "   |   " << -1 * allDriverTransactions[i].cost << "   |   "
+                             << allDriverTransactions[i].d.month << "/" << allDriverTransactions[i].d.day
+                             << "/" << allDriverTransactions[i].d.year << "   |   " << allDriverTransactions[i].d.hour
+                             << ":" << allDriverTransactions[i].d.min
+                             << "   |   " << allDriverTransactions[i].exp << endl;
+                    } else {
+                        cout << allDriverTransactions[i].trackingNumber << "   |   " << allDriverTransactions[i].dest
+                             << "   |   " << "You"
+                             << "   |   " << allDriverTransactions[i].cost << "   |   "
+                             << allDriverTransactions[i].d.month << "/" << allDriverTransactions[i].d.day
+                             << "/" << allDriverTransactions[i].d.year << "   |   " << allDriverTransactions[i].d.hour
+                             << ":" << allDriverTransactions[i].d.min
+                             << "   |   " << allDriverTransactions[i].exp << endl;
+                    }
+                    fontColor(7);
+                }
+            }
+            char temp = getch();
+            if (temp == 0) {
+                temp = getch();
+                if (temp == 97)
+                    break;
+            }
 
+        }
     }
-     */
+    fontColor(112);
+    cout<<" ";
+    clrscr();
+    driversLoginPage(username,findDriver(username));
 }
+
 
 void editProfilePage(int username){
     clrscr();
@@ -482,8 +631,9 @@ void editProfilePage(int username){
             fontColor(112);
         }
     }
-    driversLoginPage(username);
+    driversLoginPage(username,findDriver(username));
 }
+
 
 int stringToInt(string input){
     int x = 0;
@@ -668,19 +818,47 @@ void EditBankAccount(int username){
     cout<<"Enter new bank account number : ";
     int newBankAccountNumber;
     cin>>newBankAccountNumber;
-    string fileAddress = "Drivers/usrs/"+ to_string(username) +".drvr";
-    FILE* fp = fopen(fileAddress.c_str(),"rb");
-    Driver temp = {};
-    fread(&temp, sizeof(Driver), 1, fp);
-    fclose(fp);
-    FILE* fp_d = fopen(fileAddress.c_str(),"wb");
-    temp.bankaccount = newBankAccountNumber;
-    fwrite(&temp, sizeof(Driver), 1, fp_d);
-    fclose(fp_d);
+    gotoxy(x-8,y+1);
+    cout << "Enter Password : ";
+    int Password;
+    cin >> Password;
+    vector<account> tempAcc = allAccounts();
+    for (int i = 0; i < tempAcc.size(); i++) {
+        if (tempAcc[i].ID == newBankAccountNumber){
+            if (tempAcc[i].password == Password){
+                string fileAddress = "Drivers/usrs/"+ to_string(username) +".drvr";
+                FILE* fp = fopen(fileAddress.c_str(),"rb");
+                Driver temp = {};
+                fread(&temp, sizeof(Driver), 1, fp);
+                fclose(fp);
+                FILE* fp_d = fopen(fileAddress.c_str(),"wb");
+                temp.bankaccount = newBankAccountNumber;
+                fwrite(&temp, sizeof(Driver), 1, fp_d);
+                fclose(fp_d);
+                clrscr();
+                gotoxy(x-21,y);
+                fontColor(124);
+                cout<<"Bank account number changed successfully!";
+                Sleep(1500);
+                editProfilePage(username);
+                return;
+            } else {
+            clrscr();
+            fontColor(124);
+            gotoxy(x-15,y);
+            cout << "Incorrect password! Try Again\a";
+            _sleep(1500);
+            EditBankAccount(username);
+            }
+        }
+    }
     clrscr();
-    gotoxy(x-21,y);
     fontColor(124);
-    cout<<"Bank account number changed successfully!";
+    gotoxy(15,y);
+    cout << "Account not found! Try again.\a";
     Sleep(1500);
-    editProfilePage(username);
+    EditBankAccount(username);
 }
+
+//TODO Gereftan List mosafer
+//TODO virayesh safar

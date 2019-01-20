@@ -5,6 +5,6 @@
 #ifndef TRAVEL_AGENCY_TICKETS_H
 #define TRAVEL_AGENCY_TICKETS_H
 
-void tickets();
+void ticketsPanel();
 
 #endif //TRAVEL_AGENCY_TICKETS_H

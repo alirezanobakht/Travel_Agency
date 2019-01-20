@@ -104,10 +104,10 @@
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/setting.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/tickets.cpp">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/ticketsPanel.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/tickets.h">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/ticketsPanel.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/transaction.cpp">
@@ -116,10 +116,10 @@
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/transaction.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/trips.cpp">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/tripsPanel.cpp">
 			<Option target="Travel_Agency"/>
 		</Unit>
-		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/trips.h">
+		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/tripsPanel.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Admin/AdminPanels/userPanel.cpp">
@@ -156,6 +156,12 @@
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Drivers/AhmadDriver.h">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Drivers/TripsFunctions.cpp">
+			<Option target="Travel_Agency"/>
+		</Unit>
+		<Unit filename="E:/Project/Travel_Agency/Drivers/TripsFunctions.h">
 			<Option target="Travel_Agency"/>
 		</Unit>
 		<Unit filename="E:/Project/Travel_Agency/Drivers/UI/ahmadUI.cpp">

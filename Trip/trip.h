@@ -5,8 +5,9 @@
 #ifndef TRAVEL_AGENCY_TRIP_H
 #define TRAVEL_AGENCY_TRIP_H
 
+#include "../someThingNecessary.h"
 
-#include "../myAll.h"
+//#include "../myAll.h"
 #include "../Drivers/AhmadDriver.h"
 
 typedef struct Trip{
@@ -15,22 +16,25 @@ typedef struct Trip{
     int dst;
     Driver drvr;
     myDate date;
-    //vehicle v;
-    float estimate;
+    int estimate;
     int cost;
-
+    bool seats[1000] = {};
 }Trip;
+
+vector<Trip> getTripDriver(int user);
 
 int getTripID();
 
 vector<Trip> getAllTrip();
 
-vector<Trip> getTrip(int src,int dst);
+vector<Trip> getTripUser(int src, int dst);
 
 void addTrip(Trip trip);
 
 void deleteTrip(int id);
 
+void updateTrip(vector<Trip> trip);
 
+//TODO YE gohi benevisin ke list mosaferaye hameye ye trip khas ba ID khas ro bar gardoone
 
 #endif //TRAVEL_AGENCY_TRIP_H

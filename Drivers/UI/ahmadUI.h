@@ -10,6 +10,8 @@
 #include <string.h>
 #include <Windows.h>
 #include "../../UI/UI.h"
+#include "../../BankAccounts/account_func.h"
+#include "../AhmadDriver.h"
 using namespace std;
 
 
@@ -19,15 +21,17 @@ using namespace std;
 void editProfilePage(int username);
 
 
-void driversLoginPage(int username);
+void driversLoginPage(int username,Driver drvr);
+
 
 
 void loginPage();
 
-void listOfTripsDriver(int username);
+void listOfAllTripsDriver(int username);
+
+void listOfAllTransactions(int username);
 
 
-void defineATrip(int username);
 
 
 void EditPhonenumber (int username);

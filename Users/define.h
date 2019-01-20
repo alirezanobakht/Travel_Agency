@@ -12,6 +12,7 @@
 #include <windows.h>
 #include <conio.h>
 #include "../BankAccounts/account_func.h"
+#include "../Trip/trip.h"
 using namespace std;
 typedef struct user{
     char user_name[9]={};
@@ -23,9 +24,10 @@ typedef struct user{
     char reference[9]={};
 }User;
 typedef struct ticket{
-    char id[9]={};
-    int cost=0;
-    int seat_id=-1;
+    int id = 0;
+    Trip ticket_trip={};
+    int seat_number=-1;
+    char phone_number[12]={};
 }Ticket;
 
 

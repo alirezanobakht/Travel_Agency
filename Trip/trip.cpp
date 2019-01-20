@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+//------------------------------:D
 int getTripID(){
     FILE *f=fopen("Trip/getTripId.dat","rb");
     if(f==NULL){
@@ -41,7 +43,7 @@ void updateTrip(vector<Trip> trip){
 vector<Trip> getAllTrip(){
     vector<Trip> trips;
     Trip trip;
-    FILE * f=fopen("Trip/trips.dat","wb");
+    FILE * f=fopen("Trip/trips.dat","rb");
     if(f==NULL){
         fclose(f);
         return trips;
@@ -57,7 +59,7 @@ vector<Trip> getAllTrip(){
     return trips;
 }
 
-vector<Trip> getTrip(int src,int dst){
+vector<Trip> getTripUser(int src, int dst){
     vector<Trip> trips=getAllTrip();
     vector<Trip> wanted;
     for(int i=0;i<trips.size();i++){
@@ -66,6 +68,17 @@ vector<Trip> getTrip(int src,int dst){
         }
     }
     return wanted;
+}
+
+vector<Trip> getTripDriver(int user){
+    vector<Trip> trips=getAllTrip();
+    vector<Trip> ahmad;
+    for(int i=0;i<trips.size();i++){
+        if(trips[i].drvr.username==user){
+            ahmad.push_back(trips[i]);
+        }
+    }
+    return ahmad;
 }
 
 void addTrip(Trip trip){

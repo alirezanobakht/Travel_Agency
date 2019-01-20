@@ -7,9 +7,11 @@
 #include "BankAccounts/account_func.h"
 #include "someThingNecessary.h"
 #include <stdlib.h>
-#include "myAll.h"
+//#include "myAll.h"
 #include "Users/userMain.h"
 #include "Drivers/UI/ahmadUI.h"
+//TODO ino vardar:
+#include "Cities/city.h"
 using namespace std;
 
 
@@ -40,6 +42,7 @@ void toBinaryAcc(){
 }
 
 int main(){
+
     toBinaryAcc();
     fullScreen();
     fontColor(120);
@@ -55,6 +58,31 @@ int main(){
     gotoxy(x-4,y-2);
     fontColor(112);
     cout<<"Enter As:";
+
+
+
+
+
+    ////Danger zone:
+    //cout<<getDistance(1,2);
+
+    /*
+    Trip magha;
+    magha.cost = 85000;
+    magha.estimate = 85;
+    magha.date.hour = 18;
+    magha.date.min = 30;
+    magha.drvr.username = 10000;
+    magha.src = 1;
+    magha.drvr.v.capacity = 12;
+    magha.dst = 2;
+    magha.ID = getTripID();
+    magha.seats[1] = true;
+    magha.seats[0] = true;
+    addTrip(magha);
+
+    */
+    //addTrans(200005,8500,200002,1234,"Ticket");
     while(1){
         color=abs(color)%3;
         gotoxy(x-3,y-1);
@@ -109,14 +137,5 @@ int main(){
         }
 
     }
-    if(x==1){
-        Admin();
-    }
-    else if(x==2){
-
-    }
-    else{
-    }
-
     return 0;
 }

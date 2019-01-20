@@ -7,12 +7,12 @@
 
 //Date structure:
 typedef struct myDate{
-    int year;
-    int month;
-    int day;
-    int hour;
-    int min;
-    int sec;
+    int year = 2000;
+    int month = 1;
+    int day = 1;
+    int hour = 0;
+    int min = 0;
+    int sec = 0;
 }myDate;
 
 

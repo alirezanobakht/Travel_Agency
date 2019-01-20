@@ -24,6 +24,7 @@ vector<account> allAccounts();
 int getTrack(bool b);
 
 int addMoney(int accID,int cost);
+void updateAccounts(vector<account>);
 
 int reduceMoney(int accID,int password,int cost);
 /*
@@ -40,7 +41,7 @@ typedef struct trans{
 
 /*this function return 3 value:
  * the positive number that is the money in the account
- * -1 : when account exist but password is wrong
+ * -1 : when account exists but password is wrong
  * -2 : when no such account found
  */
 int remainder(int account,int password);

@@ -230,32 +230,32 @@ Admin/AdminPanels/setting.cpp.s:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/setting.cpp.s
 .PHONY : Admin/AdminPanels/setting.cpp.s
 
-Admin/AdminPanels/tickets.obj: Admin/AdminPanels/tickets.cpp.obj
+Admin/AdminPanels/ticketsPanel.obj: Admin/AdminPanels/ticketsPanel.cpp.obj
 
-.PHONY : Admin/AdminPanels/tickets.obj
+.PHONY : Admin/AdminPanels/ticketsPanel.obj
 
 # target to build an object file
-Admin/AdminPanels/tickets.cpp.obj:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.obj
-.PHONY : Admin/AdminPanels/tickets.cpp.obj
+Admin/AdminPanels/ticketsPanel.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.obj
+.PHONY : Admin/AdminPanels/ticketsPanel.cpp.obj
 
-Admin/AdminPanels/tickets.i: Admin/AdminPanels/tickets.cpp.i
+Admin/AdminPanels/ticketsPanel.i: Admin/AdminPanels/ticketsPanel.cpp.i
 
-.PHONY : Admin/AdminPanels/tickets.i
+.PHONY : Admin/AdminPanels/ticketsPanel.i
 
 # target to preprocess a source file
-Admin/AdminPanels/tickets.cpp.i:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.i
-.PHONY : Admin/AdminPanels/tickets.cpp.i
+Admin/AdminPanels/ticketsPanel.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.i
+.PHONY : Admin/AdminPanels/ticketsPanel.cpp.i
 
-Admin/AdminPanels/tickets.s: Admin/AdminPanels/tickets.cpp.s
+Admin/AdminPanels/ticketsPanel.s: Admin/AdminPanels/ticketsPanel.cpp.s
 
-.PHONY : Admin/AdminPanels/tickets.s
+.PHONY : Admin/AdminPanels/ticketsPanel.s
 
 # target to generate assembly for a file
-Admin/AdminPanels/tickets.cpp.s:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tickets.cpp.s
-.PHONY : Admin/AdminPanels/tickets.cpp.s
+Admin/AdminPanels/ticketsPanel.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/ticketsPanel.cpp.s
+.PHONY : Admin/AdminPanels/ticketsPanel.cpp.s
 
 Admin/AdminPanels/transaction.obj: Admin/AdminPanels/transaction.cpp.obj
 
@@ -284,32 +284,32 @@ Admin/AdminPanels/transaction.cpp.s:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/transaction.cpp.s
 .PHONY : Admin/AdminPanels/transaction.cpp.s
 
-Admin/AdminPanels/trips.obj: Admin/AdminPanels/trips.cpp.obj
+Admin/AdminPanels/tripsPanel.obj: Admin/AdminPanels/tripsPanel.cpp.obj
 
-.PHONY : Admin/AdminPanels/trips.obj
+.PHONY : Admin/AdminPanels/tripsPanel.obj
 
 # target to build an object file
-Admin/AdminPanels/trips.cpp.obj:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.obj
-.PHONY : Admin/AdminPanels/trips.cpp.obj
+Admin/AdminPanels/tripsPanel.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.obj
+.PHONY : Admin/AdminPanels/tripsPanel.cpp.obj
 
-Admin/AdminPanels/trips.i: Admin/AdminPanels/trips.cpp.i
+Admin/AdminPanels/tripsPanel.i: Admin/AdminPanels/tripsPanel.cpp.i
 
-.PHONY : Admin/AdminPanels/trips.i
+.PHONY : Admin/AdminPanels/tripsPanel.i
 
 # target to preprocess a source file
-Admin/AdminPanels/trips.cpp.i:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.i
-.PHONY : Admin/AdminPanels/trips.cpp.i
+Admin/AdminPanels/tripsPanel.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.i
+.PHONY : Admin/AdminPanels/tripsPanel.cpp.i
 
-Admin/AdminPanels/trips.s: Admin/AdminPanels/trips.cpp.s
+Admin/AdminPanels/tripsPanel.s: Admin/AdminPanels/tripsPanel.cpp.s
 
-.PHONY : Admin/AdminPanels/trips.s
+.PHONY : Admin/AdminPanels/tripsPanel.s
 
 # target to generate assembly for a file
-Admin/AdminPanels/trips.cpp.s:
-	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/trips.cpp.s
-.PHONY : Admin/AdminPanels/trips.cpp.s
+Admin/AdminPanels/tripsPanel.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Admin/AdminPanels/tripsPanel.cpp.s
+.PHONY : Admin/AdminPanels/tripsPanel.cpp.s
 
 Admin/AdminPanels/userPanel.obj: Admin/AdminPanels/userPanel.cpp.obj
 
@@ -472,6 +472,33 @@ Drivers/AhmadDriver.s: Drivers/AhmadDriver.cpp.s
 Drivers/AhmadDriver.cpp.s:
 	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Drivers/AhmadDriver.cpp.s
 .PHONY : Drivers/AhmadDriver.cpp.s
+
+Drivers/TripsFunctions.obj: Drivers/TripsFunctions.cpp.obj
+
+.PHONY : Drivers/TripsFunctions.obj
+
+# target to build an object file
+Drivers/TripsFunctions.cpp.obj:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.obj
+.PHONY : Drivers/TripsFunctions.cpp.obj
+
+Drivers/TripsFunctions.i: Drivers/TripsFunctions.cpp.i
+
+.PHONY : Drivers/TripsFunctions.i
+
+# target to preprocess a source file
+Drivers/TripsFunctions.cpp.i:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.i
+.PHONY : Drivers/TripsFunctions.cpp.i
+
+Drivers/TripsFunctions.s: Drivers/TripsFunctions.cpp.s
+
+.PHONY : Drivers/TripsFunctions.s
+
+# target to generate assembly for a file
+Drivers/TripsFunctions.cpp.s:
+	$(MAKE) -f CMakeFiles\Travel_Agency.dir\build.make CMakeFiles/Travel_Agency.dir/Drivers/TripsFunctions.cpp.s
+.PHONY : Drivers/TripsFunctions.cpp.s
 
 Drivers/UI/ahmadUI.obj: Drivers/UI/ahmadUI.cpp.obj
 
@@ -737,15 +764,15 @@ help:
 	@echo ... Admin/AdminPanels/setting.obj
 	@echo ... Admin/AdminPanels/setting.i
 	@echo ... Admin/AdminPanels/setting.s
-	@echo ... Admin/AdminPanels/tickets.obj
-	@echo ... Admin/AdminPanels/tickets.i
-	@echo ... Admin/AdminPanels/tickets.s
+	@echo ... Admin/AdminPanels/ticketsPanel.obj
+	@echo ... Admin/AdminPanels/ticketsPanel.i
+	@echo ... Admin/AdminPanels/ticketsPanel.s
 	@echo ... Admin/AdminPanels/transaction.obj
 	@echo ... Admin/AdminPanels/transaction.i
 	@echo ... Admin/AdminPanels/transaction.s
-	@echo ... Admin/AdminPanels/trips.obj
-	@echo ... Admin/AdminPanels/trips.i
-	@echo ... Admin/AdminPanels/trips.s
+	@echo ... Admin/AdminPanels/tripsPanel.obj
+	@echo ... Admin/AdminPanels/tripsPanel.i
+	@echo ... Admin/AdminPanels/tripsPanel.s
 	@echo ... Admin/AdminPanels/userPanel.obj
 	@echo ... Admin/AdminPanels/userPanel.i
 	@echo ... Admin/AdminPanels/userPanel.s
@@ -764,6 +791,9 @@ help:
 	@echo ... Drivers/AhmadDriver.obj
 	@echo ... Drivers/AhmadDriver.i
 	@echo ... Drivers/AhmadDriver.s
+	@echo ... Drivers/TripsFunctions.obj
+	@echo ... Drivers/TripsFunctions.i
+	@echo ... Drivers/TripsFunctions.s
 	@echo ... Drivers/UI/ahmadUI.obj
 	@echo ... Drivers/UI/ahmadUI.i
 	@echo ... Drivers/UI/ahmadUI.s

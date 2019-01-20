@@ -2,7 +2,7 @@
 // Created by Jarvis on 12/30/2018.
 //
 //HEADER:
-#include "trips.h"
+#include "tripsPanel.h"
 //Necessary Includes:
 #include <iostream>
 #include <stdlib.h>
@@ -17,9 +17,9 @@
 using namespace std;
 
 void trips(){
-    fontColor()
+    fontColor();
     clrscr();
-    cout<<"************* Trips Panel ********************"<<endl;
+
 
     int x;
     cin>>x;

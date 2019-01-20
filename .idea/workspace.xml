@@ -40,11 +40,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/trips.cpp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trip/trip.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="34" column="34" selection-start-line="34" selection-end-line="34" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#106#637#0" expanded="true" />
+                <element signature="e#1188#1459#0" expanded="true" />
+                <element signature="e#1461#1713#0" expanded="true" />
+                <element signature="e#1715#1828#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Trip/trip.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#206#351#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Users/tickets.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#2762#2852#0" />
+                <element signature="e#2762#3077#0" expanded="true" />
+                <element signature="e#3078#3146#0" />
+                <element signature="e#3388#3544#0" />
+                <element signature="e#3758#3837#0" />
+                <element signature="e#4834#4912#0" />
+                <element signature="e#5960#6497#0" expanded="true" />
+                <element signature="e#6498#8204#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Users/userMain.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="652" column="22" lean-forward="true" selection-start-line="652" selection-start-column="22" selection-end-line="652" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#20601#21612#0" expanded="true" />
+                <element signature="e#27071#29046#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Users/userMain.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding>
+                <element signature="e#109#130#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,6 +124,7 @@
       <find>move_between_items</find>
       <find>Sleep</find>
       <find>_sleep</find>
+      <find>is_ticket_cancel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -66,61 +133,62 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Admin/adminlogged.h" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/setting.h" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/users.h" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/drivers.h" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/tickets.h" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/transaction.h" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/trips.h" />
         <option value="$PROJECT_DIR$/main.h" />
-        <option value="$PROJECT_DIR$/BankAccounts/account_func.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/Profile/profileEdit.h" />
         <option value="$PROJECT_DIR$/Admin/admin.h" />
-        <option value="$PROJECT_DIR$/Cities/city.h" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/offers.h" />
-        <option value="$PROJECT_DIR$/someThingNecessary.h" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/drivers.cpp" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/tickets.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/users.cpp" />
-        <option value="$PROJECT_DIR$/Admin/adminlogged.cpp" />
         <option value="$PROJECT_DIR$/Admin/admin.cpp" />
         <option value="$PROJECT_DIR$/UI/UI.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/setting.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/Profile/profileEdit.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/offers.cpp" />
-        <option value="$PROJECT_DIR$/Cities/city.cpp" />
-        <option value="$PROJECT_DIR$/Users/tickets.h" />
         <option value="$PROJECT_DIR$/Users/mammadUI.h" />
         <option value="$PROJECT_DIR$/Users/users.h" />
-        <option value="$PROJECT_DIR$/myAll.h" />
         <option value="$PROJECT_DIR$/UI/UI.h" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/userPanel.cpp" />
         <option value="$PROJECT_DIR$/Users/mammadUI.cpp" />
-        <option value="$PROJECT_DIR$/Users/tickets.cpp" />
         <option value="$PROJECT_DIR$/Users/users.cpp" />
-        <option value="$PROJECT_DIR$/Users/define.h" />
-        <option value="$PROJECT_DIR$/BankAccounts/account_func.h" />
-        <option value="$PROJECT_DIR$/someThingNecessary.cpp" />
         <option value="$PROJECT_DIR$/Admin/AdminPanels/transaction.cpp" />
-        <option value="$PROJECT_DIR$/Trip/trip.cpp" />
-        <option value="$PROJECT_DIR$/Users/userMain.h" />
         <option value="$PROJECT_DIR$/Drivers/drivers.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Drivers/UI/ahmadUI.h" />
-        <option value="$PROJECT_DIR$/Users/userMain.cpp" />
         <option value="$PROJECT_DIR$/Drivers/drivers.h" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/trips.cpp" />
+        <option value="$PROJECT_DIR$/Admin/adminlogged.cpp" />
+        <option value="$PROJECT_DIR$/someThingNecessary.cpp" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/drivers.cpp" />
+        <option value="$PROJECT_DIR$/Trip/trip.cpp" />
+        <option value="$PROJECT_DIR$/myAll.h" />
         <option value="$PROJECT_DIR$/Drivers/AhmadDriver.cpp" />
         <option value="$PROJECT_DIR$/Drivers/AhmadDriver.h" />
+        <option value="$PROJECT_DIR$/Users/define.h" />
+        <option value="$PROJECT_DIR$/BankAccounts/account_func.cpp" />
+        <option value="$PROJECT_DIR$/BankAccounts/account_func.h" />
+        <option value="$PROJECT_DIR$/Drivers/TripsFunctions.h" />
+        <option value="$PROJECT_DIR$/someThingNecessary.h" />
+        <option value="$PROJECT_DIR$/Cities/city.cpp" />
+        <option value="$PROJECT_DIR$/Drivers/UI/ahmadUI.h" />
         <option value="$PROJECT_DIR$/Drivers/UI/ahmadUI.cpp" />
+        <option value="$PROJECT_DIR$/Cities/city.h" />
+        <option value="$PROJECT_DIR$/Drivers/TripsFunctions.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/tickets.h" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/tickets.cpp" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/ticketsPanel.h" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/ticketsPanel.cpp" />
+        <option value="$PROJECT_DIR$/Admin/AdminPanels/tripsPanel.cpp" />
+        <option value="$PROJECT_DIR$/Users/tickets.h" />
+        <option value="$PROJECT_DIR$/Users/tickets.cpp" />
+        <option value="$PROJECT_DIR$/Users/userMain.h" />
         <option value="$PROJECT_DIR$/Trip/trip.h" />
-        <option value="$PROJECT_DIR$/Admin/AdminPanels/trips.cpp" />
+        <option value="$PROJECT_DIR$/Users/userMain.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
@@ -131,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,12 +220,37 @@
             <path>
               <item name="Travel_Agency" type="b2602c69:ProjectViewProjectNode" />
               <item name="Travel_Agency" type="462c0819:PsiDirectoryNode" />
-              <item name="Drivers" type="462c0819:PsiDirectoryNode" />
+              <item name="Trip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Travel_Agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Travel_Agency" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Travel_Agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Travel_Agency" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="tics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Travel_Agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Travel_Agency" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="usrs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Travel_Agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Travel_Agency" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+              <item name="usrs" type="462c0819:PsiDirectoryNode" />
+              <item name="mgh" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -166,6 +258,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
   </component>
   <component name="RunDashboard">
@@ -230,11 +323,14 @@
       <workItem from="1547817074958" duration="5853000" />
       <workItem from="1547823021915" duration="1576000" />
       <workItem from="1547836068167" duration="1897000" />
+      <workItem from="1547894067911" duration="7315000" />
+      <workItem from="1547901813501" duration="36574000" />
+      <workItem from="1547963612793" duration="27713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176665000" />
+    <option name="totallyTimeSpent" value="248267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -246,10 +342,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25771812" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13154362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -270,153 +365,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25771812" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32152975" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.328084" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.17705382" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32719547" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/wincon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/windef.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/minwindef.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="108" column="24" lean-forward="true" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-            <element signature="e#250#263#0" expanded="true" />
-            <element signature="e#588#704#0" expanded="true" />
-            <element signature="e#1044#1058#0" expanded="true" />
-            <element signature="e#1184#1200#0" expanded="true" />
-            <element signature="e#1283#1297#0" expanded="true" />
-            <element signature="e#1411#1444#0" expanded="true" />
-            <element signature="e#2724#2874#0" expanded="true" />
-            <element signature="e#3676#3779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/drivers.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#290#705#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/tickets.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/Profile/profileEdit.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/Profile/profileEdit.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#200#226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/admin.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cities/city.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cities/city.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#139#188#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/setting.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/setting.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/tickets.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UI/UI.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
@@ -424,23 +377,6 @@
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#505#886#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/UI.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#97#116#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -495,84 +431,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/tickets.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="144" column="26" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-          <folding>
-            <element signature="e#64#219#0" expanded="true" />
-            <element signature="e#220#430#0" expanded="true" />
-            <element signature="e#431#670#0" expanded="true" />
-            <element signature="e#671#1243#0" expanded="true" />
-            <element signature="e#1244#1507#0" expanded="true" />
-            <element signature="e#1508#2154#0" expanded="true" />
-            <element signature="e#2155#2438#0" expanded="true" />
-            <element signature="e#2439#2743#0" expanded="true" />
-            <element signature="e#2744#2949#0" expanded="true" />
-            <element signature="e#2950#3135#0" expanded="true" />
-            <element signature="e#3136#3338#0" expanded="true" />
-            <element signature="e#3339#3843#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/users.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/offers.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6">
           <caret line="146" column="15" selection-start-line="146" selection-start-column="15" selection-end-line="146" selection-end-column="15" />
           <folding>
             <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/define.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#461#532#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/someThingNecessary.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/someThingNecessary.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BankAccounts/account_func.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#878#1222#0" expanded="true" />
-            <element signature="e#2240#2343#0" />
-            <element signature="e#3709#3760#0" />
           </folding>
         </state>
       </provider>
@@ -587,31 +451,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BankAccounts/account_func.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#267#331#0" />
-            <element signature="e#481#514#0" />
-            <element signature="e#523#642#0" />
-            <element signature="e#1021#1178#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/mammadUI.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/trips.h">
+    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/tripsPanel.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Users/mammadUI.h">
@@ -624,55 +464,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Trip/trip.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/userMain.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#109#130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Drivers/drivers.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#38#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Drivers/drivers.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#2#0" />
-            <element signature="e#70#1690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myAll.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Drivers/drivers.cpp" />
+    <entry file="file://$PROJECT_DIR$/Drivers/drivers.h" />
     <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/offers.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -680,17 +473,6 @@
           <folding>
             <element signature="e#0#2#0" />
             <element signature="e#140#190#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/adminlogged.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#225#245#0" expanded="true" />
-            <element signature="e#589#3242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -706,30 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Drivers/AhmadDriver.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Drivers/UI/ahmadUI.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/stdlib.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -737,60 +495,340 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/userMain.cpp">
+    <entry file="file://$PROJECT_DIR$/Trip/getTripId.dat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trip/trips.dat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/drivers.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="569" column="48" selection-start-line="569" selection-start-column="48" selection-end-line="569" selection-end-column="48" />
+        <state relative-caret-position="493">
+          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
           <folding>
             <element signature="e#0#2#0" />
-            <element signature="e#42#63#0" expanded="true" />
-            <element signature="e#22206#23539#0" expanded="true" />
+            <element signature="e#1951#3450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myAll.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/users.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Drivers/AhmadDriver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#228#302#0" />
+            <element signature="e#516#728#0" />
+            <element signature="e#786#828#0" />
+            <element signature="e#860#977#0" />
+            <element signature="e#1010#1111#0" />
+            <element signature="e#1145#1309#0" />
+            <element signature="e#1344#1526#0" />
+            <element signature="e#1565#1614#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/mammadUI.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/usrs/mgh/ticks.def">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/UI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#97#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankAccounts/account_func.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#243#878#0" expanded="true" />
+            <element signature="e#880#1224#0" expanded="true" />
+            <element signature="e#4415#4854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Drivers/TripsFunctions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cities/city.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="78" selection-start-line="78" selection-end-line="78" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#139#188#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Drivers/UI/ahmadUI.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#107#125#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Drivers/UI/ahmadUI.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="679" column="13" selection-start-line="679" selection-start-column="13" selection-end-line="679" selection-end-column="13" />
+        <state relative-caret-position="121">
+          <caret line="436" column="34" selection-start-line="436" selection-start-column="34" selection-end-line="436" selection-end-column="34" />
           <folding>
             <element signature="e#0#2#0" />
-            <element signature="e#42#62#0" expanded="true" />
+            <element signature="e#466#1169#0" />
+            <element signature="e#25324#25352#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cities/city.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Drivers/AhmadDriver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="144">
+          <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
           <folding>
+            <element signature="e#0#2#0" />
             <element signature="e#42#66#0" expanded="true" />
-            <element signature="e#722#1313#0" expanded="true" />
-            <element signature="e#1315#1560#0" expanded="true" />
-            <element signature="e#1563#2516#0" expanded="true" />
-            <element signature="e#2519#3072#0" expanded="true" />
-            <element signature="e#3074#3401#0" expanded="true" />
-            <element signature="e#3404#3610#0" expanded="true" />
+            <element signature="e#3406#3610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/tics/0.tic">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/someThingNecessary.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/someThingNecessary.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#232#259#0" expanded="true" />
+            <element signature="e#1115#2959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankAccounts/account_func.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#118#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Drivers/TripsFunctions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#2#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/ticketsPanel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/ticketsPanel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding>
+            <element signature="e#52#84#0" expanded="true" />
+            <element signature="e#133#152#0" expanded="true" />
+            <element signature="e#263#286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/adminlogged.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="156" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="156" selection-end-column="9" />
+          <folding>
+            <element signature="e#225#245#0" expanded="true" />
+            <element signature="e#333#365#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/tickets.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/define.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="e#105#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/userMain.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#109#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/tics/default.def">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/tripsPanel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trip/trip.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="34" selection-start-line="34" selection-end-line="34" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#106#637#0" expanded="true" />
+            <element signature="e#1188#1459#0" expanded="true" />
+            <element signature="e#1461#1713#0" expanded="true" />
+            <element signature="e#1715#1828#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Trip/trip.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="301">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding>
-            <element signature="e#102#123#0" expanded="true" />
-            <element signature="e#165#300#0" />
+            <element signature="e#0#2#0" />
+            <element signature="e#206#351#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/AdminPanels/trips.cpp">
+    <entry file="file://$PROJECT_DIR$/Users/tickets.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="101">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#2762#2852#0" />
+            <element signature="e#2762#3077#0" expanded="true" />
+            <element signature="e#3078#3146#0" />
+            <element signature="e#3388#3544#0" />
+            <element signature="e#3758#3837#0" />
+            <element signature="e#4834#4912#0" />
+            <element signature="e#5960#6497#0" expanded="true" />
+            <element signature="e#6498#8204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Users/userMain.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="652" column="22" lean-forward="true" selection-start-line="652" selection-start-column="22" selection-end-line="652" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#20601#21612#0" expanded="true" />
+            <element signature="e#27071#29046#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
